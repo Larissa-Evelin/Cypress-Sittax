@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+      "target": "ES2022",
+      "module": "commonjs",
+      "lib": ["ES2022", "dom"],
+      "types": ["cypress", "node"],
+      "moduleResolution": "node",
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "strict": true,
+      "noImplicitAny": false,
+      "experimentalDecorators": true,
+      "importHelpers": true,
+    },
+    "include": [
+      "cypress/**/*.ts"
+    ],
+    "exclude": [
+      "node_modules"
+    ]
+
+  }
+  
