@@ -7,25 +7,25 @@ const toaster = new Toaster();
 const swalPage = new SwalPage();
 const menuLateral = new MenuLateralPage();
 
-describe("Testar o cadastro de empresa pelo Certificado digital", () => {
+describe("Validar o cadastro de empresa pelo Certificado digital", () => {
     before(() => {
         cy.login(usuarios.sistema.email, usuarios.sistema.senha);
         menuLateral.irParaCadastroDeEmpresas();
     });
 
-    afterEach(() => {
-        empresaPage.clicarFechar();
-    })
-
     it("Cadastrar empresa por Certificado", () => {
         empresaPage.cadastrarEmpresaPorCertificado(empresa.caminhoDoCertificado);
         swalPage.getMensagem().should("contain.text", "sucesso");
         swalPage.clicarOk();
+        empresaPage.clicarFechar();
     });
 
-    it("Tentar cadastar a empresa novamente -> DEVE DAR ERRO", () => {
+    it("Validar se irá cadastar a empresa novamente -> DEVE DAR ERRO", () => {
         empresaPage.cadastrarEmpresaPorCertificado(empresa.caminhoDoCertificado);
-        toaster.verificaMensagemDoToaster(`Empresa [${empresa.cnpj}] já cadastrada no Sittax! Por favor, entre em contato com o suporte!`);
+        swalPage.clicarOk();
+        empresaPage.clicarFechar();
+        tablePage.digitarPesquisarField(empresa.cnpj);
+        tablePage.getItensDaGrade().should('have.length', 1);
     });
 
     it("Validar os dados da empresa", () => {

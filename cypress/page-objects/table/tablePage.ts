@@ -76,7 +76,7 @@ export default class TablePage {
     }
   }
 
-  getItensDaGrade(modalElement: string) {
+  getItensDaGrade(modalElement?: string) {
     if (modalElement) {
       return cy
       .get(`${modalElement} tbody:visible`)
