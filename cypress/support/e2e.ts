@@ -18,6 +18,7 @@ import './commands';
 import "cypress-localstorage-commands";
 import 'cypress-real-events';
 import 'cypress-file-upload';
+import "cypress-fail-fast";
 
 Cypress.on("uncaught:exception", (err, runnable) => {
     return false;

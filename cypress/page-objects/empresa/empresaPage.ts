@@ -199,7 +199,7 @@ interface IEmpresaCertificado {
     regimeTributario: string,
     inscricaoEstadual: string,
     dataAbertura: string,
-    caminhoDoCertificado: string
+    caminhoDoArquivo: string
 }
 
 export default class EmpresaPage {
@@ -220,6 +220,28 @@ export default class EmpresaPage {
         this.clicarSalvarAbaGeral();
         cy.wait("@cadastrarEmpresa");
     }
+
+    cadastrarEmpresaPorExcel(caminhoDoCertificado: string){
+        cy.intercept("POST", "**/upload/CadastrarEmpresaPorExcel").as("uploadExcel");
+        this.clicarNovaEmpresa();
+        this.clicarAbaCadastrarPorExcel();
+        this.importarEmpresasAbaCadastrarPorExcel(caminhoDoCertificado);
+        this.clicarEnviarTodosButtonAbaCadastrarPorExcel();
+        cy.wait("@uploadExcel");
+    }
+
+    importarEmpresasAbaCadastrarPorExcel(arquivo: string) {
+        cy.fixture(arquivo, "base64").then((data) => {
+          cy.get(importarExcelButtonAbaCadastrarPorExcel).attachFile({
+            filePath: arquivo,
+            fileContent: data,
+            fileName: arquivo,
+            encoding: "base64",
+            mimeType: "application/octet-stream",
+          });
+        });
+      }
+
 
     cadastrarEmpresaPorCertificado(caminhoDoCertificado: string) {
         cy.intercept("POST", "**/certificado").as("uploadCertificado");

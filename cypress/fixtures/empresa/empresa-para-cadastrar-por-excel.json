@@ -1,0 +1,34 @@
+[
+    {
+        "cnpj": "18.143.932/0001-59",
+        "razaoSocial": "CENTRO AUTOMOTIVO ALINHA CAR LTDA",
+        "nomeFantasia": "ALINHACAR LTDA",
+        "uf": "MG",
+        "municipio": "SÃO GOTARDO",
+        "telefone": "(34) 3671-4716",
+        "email": "alessandro.mota@sittax.com",
+        "atividadePrincipalCodigo": "4520001",
+        "atividadePrincipalDescricao": "Serviços de manutenção e reparação mecânica de veículos automotores",
+        "regimeTributario": "Simples Nacional",
+        "inscricaoEstadual": "002.151.384/0037",
+        "dataAbertura": "20/05/2013",
+        "caminhoDoArquivo": "/arquivos/empresas/importar-empresas.xlsx",
+        "certificadoPorProcuracao": true
+    },
+    {
+        "cnpj": "51.509.089/0001-57",
+        "razaoSocial": "ONE RESTAURADORA DE AUTOMOVEIS LTDA",
+        "nomeFantasia": "",
+        "uf": "PR",
+        "municipio": "APUCARANA",
+        "telefone": "(43) 99629-869",
+        "email": "onerestauradora@gmail.com",
+        "atividadePrincipalCodigo": "4520002",
+        "atividadePrincipalDescricao": "Serviços de lanternagem ou funilaria e pintura de veículos automotores",
+        "regimeTributario": "Simples Nacional",
+        "inscricaoEstadual": "91016887-87",
+        "dataAbertura": "21/07/2023",
+        "caminhoDoArquivo": "/arquivos/empresas/importar-empresas.xlsx",
+        "certificadoPorProcuracao": false
+    }
+]

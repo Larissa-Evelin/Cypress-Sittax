@@ -11,5 +11,5 @@
     "regimeTributario": "Simples Nacional",
     "inscricaoEstadual": "10.250.149-1",
     "dataAbertura": "25/08/1992",
-    "caminhoDoCertificado": "/arquivos/certificados/Sittax Sistema de Inteligência Tributária - Senha Sittax@123 - Validade 02.10.25.pfx"
+    "caminhoDoArquivo": "/arquivos/certificados/Sittax Sistema de Inteligência Tributária - Senha Sittax@123 - Validade 02.10.25.pfx"
 }
