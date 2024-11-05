@@ -91,7 +91,7 @@ export default class TablePage {
       });
   }
 
-  getTable(NaoPaginada?) {
+  getTable(NaoPaginada?: string) {
     if(NaoPaginada) {
       return cy.get(NaoPaginada + table).should('be.visible');
     } 
@@ -107,7 +107,7 @@ export default class TablePage {
     cy.get("tbody:visible td:visible").should("have.length", 0);
   }
 
-  validarQuantidadeDeItemsNaGrade(quantidade, modal) {
+  validarQuantidadeDeItemsNaGrade(quantidade: number, modal?: string) {
     if (modal) {
       cy.get(modal + " tbody:visible tr:visible").should("have.length", quantidade);
     } else {
@@ -134,16 +134,16 @@ export default class TablePage {
     cy.get(pesquisarField).clear();
   }
 
-  digitarPesquisarFieldSemRequest(texto) {
+  digitarPesquisarFieldSemRequest(texto: string) {
     cy.get(pesquisarField).clearThenType(texto);
   }
 
-  pesquisarEAbrirItemDaGrade(texto) {
+  pesquisarEAbrirItemDaGrade(texto: string) {
     this.digitarPesquisarField(texto);
     this.clicarNoElementoDaGradeQueContemOTexto(texto);
   }
 
-  clicarRealizarOperacaoLoteButton(idButton) {
+  clicarRealizarOperacaoLoteButton(idButton?: string) {
     if (idButton) {
       return cy.get(idButton + " " + realizarOperacaoLoteButton).click();
     }
@@ -185,7 +185,7 @@ export default class TablePage {
     cy.get(selecionarTodos).click();
   }
 
-  getItensDeUmDeterminadoIndiceDoTd(indiceDoTd, idDaTabela) {
+  getItensDeUmDeterminadoIndiceDoTd(indiceDoTd: string, idDaTabela?: string) {
     if (idDaTabela) {
       return cy.get(idDaTabela + " " + todosOsTD + `:nth-child(${indiceDoTd})`);
     }
@@ -193,11 +193,11 @@ export default class TablePage {
     return cy.get(todosOsTD + `:nth-child(${indiceDoTd})`);
   }
 
-  getItensDeUmDeterminadoIndiceDoTr(indiceDoTr) {
+  getItensDeUmDeterminadoIndiceDoTr(indiceDoTr: string) {
     return cy.get(`.list-body:visible :nth-child(${indiceDoTr})`);
   }
 
-  getDataDeEntadaGrade(linha) {
+  getDataDeEntadaGrade(linha: number) {
     return cy.get(dataDeEntradaGrade)
       .eq(linha)
       .find("td")
@@ -205,7 +205,7 @@ export default class TablePage {
       .find("input[placeholder='Data de entrada']");
   }
 
-  clicarBotaoExcluirItemDaTabela(item, modalElement) {
+  clicarBotaoExcluirItemDaTabela(item: string, modalElement?: string) {
     if (modalElement) {
       this.getItemDaGrade(item, modalElement).find('em[title="Excluir"]:visible').click();
     } else {

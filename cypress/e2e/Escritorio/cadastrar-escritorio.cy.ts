@@ -8,7 +8,6 @@ const menuLateralPage = new MenuLateralPage();
 
 describe('Quando todas as informações obrigatórias forem preenchidas ao criar o cadastro de um escritório, o sistema deve salvar a escritório com sucesso', () => {
     before(() => {
-        // cy.login(usuarios.sistema.email, usuarios.sistema.senha);
         menuLateralPage.irParaCadastroEscritorio();
     });
     context('Cadastrar escritório', () => {

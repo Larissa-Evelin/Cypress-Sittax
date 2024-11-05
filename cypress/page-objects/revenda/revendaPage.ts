@@ -92,7 +92,7 @@ export default class RevendaPage {
         });
     }
 
-    editarRevenda(revenda) {
+    editarRevenda(revenda: IRevenda) {
         cy.get("app-modal-empresa-revenda:visible").within(() => {
             cy.wait(300); //ESPERAR ABRIR O MODAL
             cy.get("input[formcontrolname='razaoSocial']").invoke("val").should("eq", revenda.razaoSocial);
@@ -202,7 +202,7 @@ export default class RevendaPage {
     //     });
     // }
 
-    verificarEscritorioTemRevenda(revenda) {
+    verificarEscritorioTemRevenda(revenda: string) {
         cy.get("app-dados-do-escritorio:visible").within(() => {
             cy.get("ngx-select[placeholder='Revenda']").should("contain", revenda);
             cy.contains("button", "Fechar")

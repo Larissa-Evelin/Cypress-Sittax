@@ -202,6 +202,11 @@ interface IEmpresaCertificado {
     caminhoDoArquivo: string
 }
 
+interface IData {
+    ano: string
+    mes: string
+}
+
 export default class EmpresaPage {
 
     private periodoPage = new PeriodoPage();
@@ -268,22 +273,22 @@ export default class EmpresaPage {
         cy.wait("@paginacao");
     }
 
-    aguardarExibirQtdEspecificaDeItemsNaGrade(quantidadeEspecifica) {
+    aguardarExibirQtdEspecificaDeItemsNaGrade(quantidadeEspecifica: string) {
         cy.get(tableModalEmpresa)
             .should('be.visible')
             .should('have.length', quantidadeEspecifica);
     }
 
-    selecionarTipoCaixaLocacaoOutros(texto) {
+    selecionarTipoCaixaLocacaoOutros(texto: string) {
         cy.wait(500); // aguardar dados dropdown carregar 
         cy.get(selectTipoCaixaLocacaoOutros).should("be.visible").click().type(texto + "{enter}");
     }
 
-    selecionarUfCte(uf) {
+    selecionarUfCte(uf: string) {
         cy.get(selectUfCaixaLocacaoOutros).click().clearThenType(uf);
     }
 
-    abrirSelecionarOpcaoDropdown(placeholder, opcao) {
+    abrirSelecionarOpcaoDropdown(placeholder: string, opcao: string) {
         cy.get(modalAdicionarSugestaoTipoNota + `ngx-select[placeholder="${placeholder}"]:visible`)
             .click()
             .type(opcao + "{enter}");
@@ -320,16 +325,16 @@ export default class EmpresaPage {
     //     cy.get(menuSelectAnexoDeServicoAbaConfiguracaoDeAnexo).contains(texto).click();
     //   }
 
-    selecionarEscritorioModal(escritorio) {
+    selecionarEscritorioModal(escritorio: string) {
         cy.wait(300);
         this.getSelectEscritorio().click().clearThenType(escritorio + "{enter}");
     }
 
-    selecionarGrupoEscritorioModal(escritorio) {
+    selecionarGrupoEscritorioModal(escritorio: string) {
         cy.get(selectGrupoEscritorio).click().type(escritorio + "{enter}");
     }
 
-    selecionarPeriodoAbaCaixaLocacaoOutros(ano, mes) {
+    selecionarPeriodoAbaCaixaLocacaoOutros(ano: string, mes: string) {
 
         cy.get("app-modal-adicionar-caixa-locacao-outros:visible").within(() => {
             cy.get(periodoInputAbaCaixaLocacaoOutros).click();
@@ -337,19 +342,19 @@ export default class EmpresaPage {
         this.periodoPage.selecionarPeriodo(ano, mes);
     }
 
-    selecionarPeriodoFolha(data) {
+    selecionarPeriodoFolha(data: IData) {
 
         cy.get("sittax-input-field:visible input[placeholder='Selecionar Período']").click();
         this.periodoPage.selecionarPeriodo(data.ano, data.mes);
     }
 
-    digitarValorInputAbaCaixaLocacaoOutros(texto) {
+    digitarValorInputAbaCaixaLocacaoOutros(texto: string) {
         cy.get(valorInputAbaCaixaLocacaoOutros)
             .click()
             .clearThenType(texto);
     }
 
-    digitarCfopInputAbaConfiguracaoDeAnexo(texto) {
+    digitarCfopInputAbaConfiguracaoDeAnexo(texto: string) {
         cy.get("body").then(($body) => {
             if ($body.find(digitarCfopInputAbaConfiguracaoDeAnexo).length > 0) {
                 cy.get(digitarCfopInputAbaConfiguracaoDeAnexo)
@@ -363,7 +368,7 @@ export default class EmpresaPage {
         });
     }
 
-    digitarCodigoServicoInputAbaConfiguracaoDeAnexo(texto) {
+    digitarCodigoServicoInputAbaConfiguracaoDeAnexo(texto: string) {
         cy.get("body").then(($body) => {
             if ($body.find(codigoServicoInputAbaConfiguracaoDeAnexo).length > 0) {
                 cy.get(codigoServicoInputAbaConfiguracaoDeAnexo)
@@ -381,124 +386,124 @@ export default class EmpresaPage {
         });
     }
 
-    digitarCodigoDeServicoAbaCodigosDeServico(texto) {
+    digitarCodigoDeServicoAbaCodigosDeServico(texto: string) {
         cy.get(codigoDeServicoAbaCodigosDeServico)
             .click()
             .wait(100) //aguardar click selecionar o input
             .type(texto + '{enter}');
     }
 
-    digitarValorFixoIcmsAbaValoresFixos(texto) {
+    digitarValorFixoIcmsAbaValoresFixos(texto: string) {
         cy.get(valorFixoIcmsAbaValoresFixos)
             .click()
             .clearThenType(texto);
     }
 
-    digitarValorFixoIssAbaValoresFixos(texto) {
+    digitarValorFixoIssAbaValoresFixos(texto: string) {
         cy.get(valorFixoIssAbaValoresFixos)
             .click()
             .clearThenType(texto);
     }
 
-    digitarValorFixoAliquotaAbaValoresFixos(texto) {
+    digitarValorFixoAliquotaAbaValoresFixos(texto: string) {
         cy.get(valorFixoAliquotaAbaValoresFixos)
             .click()
             .clearThenType(texto);
     }
 
-    digitarPesquisaField(texto) {
+    digitarPesquisaField(texto: string) {
         cy.get(pesquisaField)
             .click()
             .clearThenType(texto);
     }
 
-    digitarPesquisaFieldModal(texto) {
+    digitarPesquisaFieldModal(texto: string) {
         cy.get(modalBody + pesquisaFieldModal)
             .should('be.visible')
             .click()
             .clearThenType(texto);
     }
 
-    digitarCnpjdAbaGeral(cnpj) {
+    digitarCnpjdAbaGeral(cnpj: string) {
         cy.get(cnpjFieldAbaGeral)
             .click()
             .wait(100) //aguardar click selecionar o input
             .type(cnpj);
     }
 
-    digitarEmailFieldAbaGeral(texto) {
+    digitarEmailFieldAbaGeral(texto: string) {
         this.getEmailFieldAbaGeral()
             .click()
             .clearThenType(texto);
     }
 
-    digitarEmailApuracaoFieldAbaGeral(texto) {
+    digitarEmailApuracaoFieldAbaGeral(texto: string) {
         this.getEmailApuracaoFieldAbaGeral()
             .click()
             .clearThenType(texto);
     }
 
-    digitarSegundoEmailApuracaoFieldAbaGeral(texto) {
+    digitarSegundoEmailApuracaoFieldAbaGeral(texto: string) {
         this.getEmailApuracaoFieldAbaGeral()
             .click()
             .type("," + texto); //SEPARAÇÃO DEVE SER FEITA COM ' , ' OU ' ; '
     }
 
-    digitarNomeFantasiaFieldAbaGeral(texto) {
+    digitarNomeFantasiaFieldAbaGeral(texto: string) {
         this.getNomeFantasiaFieldAbaGeral()
             .click()
             .clearThenType(texto + "{enter}");
     }
 
-    digitarInscricaoEstadualFieldAbaGeral(texto) {
+    digitarInscricaoEstadualFieldAbaGeral(texto: string) {
         this.getInscricaoEstadualFieldAbaGeral()
             .click()
             .clearThenType(texto);
     }
 
-    digitarInscricaoMunicipalFieldAbaGeral(texto) {
+    digitarInscricaoMunicipalFieldAbaGeral(texto: string) {
         this.getInscricaoMunicipalFieldAbaGeral()
             .click()
             .clearThenType(texto);
     }
 
-    digitarUsuarioInputDadosDaPrefeitura(texto) {
+    digitarUsuarioInputDadosDaPrefeitura(texto: string) {
         this.getUsuarioInputDadosDaPrefeitura().wait(100)
             .click()
             .clearThenType(texto);
     }
 
-    digitarSenhaInputDadosDaPrefeitura(texto) {
+    digitarSenhaInputDadosDaPrefeitura(texto: string) {
         this.getSenhaInputDadosDaPrefeitura()
             .click()
             .clearThenType(texto);
     }
 
-    digitarDiaCalcularSelectAbaDadosDoEcac(texto) {
+    digitarDiaCalcularSelectAbaDadosDoEcac(texto: string) {
         cy.log(texto);
         this.getDiaCalcularSelectAbaDadosDoEcac().select(texto);
     }
 
-    digitarDiaEnviarApuracaoSelectAbaDadosDoEcac(texto) {
+    digitarDiaEnviarApuracaoSelectAbaDadosDoEcac(texto: string) {
         this.getDiaEnviarApuracaoSelectAbaDadosDoEcac().select(texto);
     }
 
-    digitarDiaTransmissaoSelectAbaDadosDoEcac(texto) {
+    digitarDiaTransmissaoSelectAbaDadosDoEcac(texto: string) {
         this.getDiaTransmissaoSelectAbaDadosDoEcac().select(texto);
     }
 
-    digitarValorDoFaturamentoNoInput(text) {
+    digitarValorDoFaturamentoNoInput(text: string) {
         this.getValorFaturamento()
             .click()
             .clearThenType(text);
     }
-    digitarValorDoFatorRNoInput(text) {
+    digitarValorDoFatorRNoInput(text: string) {
         cy.get(inputValorNaFolha).should('be.visible')
             .click()
             .clearThenType(text);
     }
 
-      importarCertificadoAbaCadastrarPorCertificado(arquivo) {
+      importarCertificadoAbaCadastrarPorCertificado(arquivo: string) {
         cy.fixture(arquivo, "base64").then((data) => {
           cy.get(importarCertificadoButtonAbaCadastrarPorCertificado).attachFile({
             filePath: arquivo,
@@ -534,7 +539,7 @@ export default class EmpresaPage {
         cy.get(inputInativarEmpresa).first().parent().find("span").click();
     }
 
-    confirmarInativarEmpresa(cnpj) {
+    confirmarInativarEmpresa(cnpj: string) {
         cy.get("#swal2-input").clearThenType(cnpj);
     }
 
@@ -542,7 +547,7 @@ export default class EmpresaPage {
         cy.contains(botaoExcluirEmpresa, "Excluir").click();
     }
 
-    confirmarExcluirEmpresa(cnpj) {
+    confirmarExcluirEmpresa(cnpj: string) {
         cy.get("#swal2-input").clearThenType(cnpj);
     }
 
@@ -603,7 +608,7 @@ export default class EmpresaPage {
             .should("not.be.checked");
     }
 
-    verificaStatusDoSwitchCertificadoPorProcuracao(certificadoPorApuracaoAtivado) {
+    verificaStatusDoSwitchCertificadoPorProcuracao(certificadoPorApuracaoAtivado: boolean) {
         if (certificadoPorApuracaoAtivado) {
             cy.get(tabelaDeConfiguracoesEmpresa)
                 .should('be.visible')
@@ -676,7 +681,7 @@ export default class EmpresaPage {
         cy.wait(300); // aguardar a ultima exclusão
     }
 
-    clicarRemoverCodigoServicoAbaCodigosServicos(codigo) {
+    clicarRemoverCodigoServicoAbaCodigosServicos(codigo: string) {
         cy.get(`div[title="${codigo}"]`).next().click()
     }
 
@@ -1004,7 +1009,7 @@ export default class EmpresaPage {
         cy.get(inputTributaIpi).should('not.be.checked')
     }
 
-    verificarSeSwitchDaTabelaEstaAtivoOuInativo(textoLinha, checked) {
+    verificarSeSwitchDaTabelaEstaAtivoOuInativo(textoLinha: string, checked: boolean) {
         cy.get(itensGradeModalEmpresa).each(element => {
             if (Cypress.$(element).text().includes(textoLinha)) {
                 if (checked) {
@@ -1016,7 +1021,7 @@ export default class EmpresaPage {
         });
     }
 
-    verificarDadosContabilista(texto, contador) {
+    verificarDadosContabilista(texto: string, contador: string) {
         if (!contador) {
             cy.get(itensGradeModalEmpresa).each(element => {
                 if (Cypress.$(element).text().includes(texto)) {
@@ -1034,11 +1039,11 @@ export default class EmpresaPage {
         }
     }
 
-    selecionarContadorDadosContabilista(texto) {
+    selecionarContadorDadosContabilista(texto: string) {
         cy.get('ng-select[placeholder="Selecione o contador"]').type(texto + '{enter}');
     }
 
-    clicarSwitchDaTabela(textoLinha) {
+    clicarSwitchDaTabela(textoLinha: string) {
         cy.get(itensGradeModalEmpresa).each(element => {
             if (Cypress.$(element).text().includes(textoLinha)) {
                 cy.wrap(element)

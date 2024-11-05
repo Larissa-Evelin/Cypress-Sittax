@@ -8,7 +8,6 @@ const menuLateralPage = new MenuLateralPage();
 
 describe('Quando for realizado o cadastro da empresa deve realizar o cadastro com sucesso', () => {
     before(() => {
-        // cy.login(usuarios.sistema.email, usuarios.sistema.senha);
         menuLateralPage.irParaCadastroDeEmpresas();
     });
 
@@ -18,6 +17,7 @@ describe('Quando for realizado o cadastro da empresa deve realizar o cadastro co
     });
 
     it(`Pesquisar a empresa ${empresa.cnpj} na grade`, () => {
+        cy.wait(600);
         empresaPage.digitarPesquisaField(empresa.cnpj);
         empresaPage.getTable().should('contain.text', empresa.cnpj);
     });

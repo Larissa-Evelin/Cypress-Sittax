@@ -58,11 +58,11 @@ export default class MenuLateralPage {
         })
     }
 
-    usarHoverSobreOMenu(nomeDoMenu) {
+    usarHoverSobreOMenu(nomeDoMenu: string) {
         cy.get(navbarLateralMinimizada).get(`a[title="${nomeDoMenu}"]`).realHover();
     }
 
-    abrirMenuInterno(valorMenuExterno, valorMenuInterno) {
+    abrirMenuInterno(valorMenuExterno: string, valorMenuInterno: string) {
         cy.get(sideBar).get(`a[title="${valorMenuExterno}"]`).click().next().invoke("attr", "class").then((value)=>{
             if (value === menuInternoMinimizado) {
                 cy.get(sideBar).get(`a[title="${valorMenuExterno}"]`).click();
@@ -73,7 +73,7 @@ export default class MenuLateralPage {
         })
     }
 
-    abrirMenu(valorMenuExterno) {
+    abrirMenu(valorMenuExterno: string) {
         cy.get(sideBar).get(`a[title="${valorMenuExterno}"]`).next().invoke("attr", "class").then((value)=>{
             if (value === menuInternoMinimizado) {
                 cy.get(sideBar).get(`a[title="${valorMenuExterno}"]`).click();

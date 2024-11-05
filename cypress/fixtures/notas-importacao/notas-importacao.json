@@ -1,0 +1,20 @@
+{
+    "cnpjDaEmpresa": "52.087.022/0001-34",
+    "periodo": {
+        "ano": "2024",
+        "mes": "Setembro"
+    },
+    "arquivos": [
+        {
+            "path": "arquivos/notas/nota-importacao.xml",
+            "chaveAcesso": "522409520870220001346500100000435811889229784358",
+            "cnpj": "52.087.022/0001-34",
+            "numero": "4358",
+            "modelo": "NFC-e",
+            "dataEmissao": "01/09/2024",
+            "destinatario": "",
+            "ValorTotal": "12,00",
+            "Status": "AUTORIZADA"
+        }
+    ] 
+}

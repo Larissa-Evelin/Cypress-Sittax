@@ -1,4 +1,4 @@
-import { TablePage, NavbarPage as MenuLateralPage} from "../../page-objects";
+import { TablePage, MenuLateralPage as MenuLateralPage} from "../../page-objects";
 
 interface IEscritorio{
     cnpj: string,
@@ -104,7 +104,7 @@ private tabelaSwitchsAbaConfiguracao =
     cy.wait(300); //ESPERAR TABELA CARREGAR
   }
 
-  clicarCheckBoxAbaEmail(titulo) {
+  clicarCheckBoxAbaEmail(titulo: string) {
     cy.get('app-dados-do-escritorio:visible app-modal').contains(titulo).parent().find('span').click();
   }
 
@@ -124,31 +124,31 @@ private tabelaSwitchsAbaConfiguracao =
     cy.get(this.cnpjField).clearThenType(texto);
   }
 
-  digitarCpfField(texto) {
+  digitarCpfField(texto: string) {
     cy.get(this.cnpjField).clearThenType(texto);
   }
 
-  digitarNomeField(texto) {
+  digitarNomeField(texto: string) {
     cy.contains(this.fieldsDadosEscritorio, "Nome").find("input[placeholder='Nome']:visible").clearThenType(texto);
   }
 
-  digitarUfField(texto) {
+  digitarUfField(texto: string) {
     cy.contains(this.fieldsDadosEscritorio, "UF").find("ngx-select[placeholder='UF']:visible").click().clearThenType(texto+"{enter}");
   }
 
-  digitarFantasiaField(texto) {
+  digitarFantasiaField(texto: string) {
     cy.contains(this.fieldsDadosEscritorio, "Fantasia")
       .find("input[placeholder='Nome fantasia']:visible")
       .clearThenType(texto);
   }
 
-  digitarMunicipioField(texto) {
+  digitarMunicipioField(texto: string) {
     cy.contains(this.fieldsDadosEscritorio, "Município")
       .find("input[placeholder='Município']:visible")
       .clearThenType(texto);
   }
 
-  digitarEmailField(texto) {
+  digitarEmailField(texto: string) {
     if(texto) {
       cy.contains(this.fieldsDadosEscritorio, "E-mail")
         .find("input[placeholder='e-mail']:visible")
@@ -156,7 +156,7 @@ private tabelaSwitchsAbaConfiguracao =
     }
   }
 
-  digitarTelefoneField(texto) {
+  digitarTelefoneField(texto: string) {
     if(texto.length > 0) {
       cy.contains(this.fieldsDadosEscritorio, "Telefone")
         .find("input[placeholder='Telefone']:visible")
@@ -164,7 +164,7 @@ private tabelaSwitchsAbaConfiguracao =
     }
   }
 
-  selecionarRevenda(texto) {
+  selecionarRevenda(texto: string) {
     cy.contains(this.fieldsDadosEscritorio, "Revenda")
     .find("ngx-select[placeholder='Revenda']:visible")
     .click()
@@ -262,7 +262,7 @@ private tabelaSwitchsAbaConfiguracao =
       .click();
   }
 
-  ativarInadimplencia(data) {
+  ativarInadimplencia(data: string) {
       cy.contains("label", "Inadimplência").parent().find("span").click();
       cy.contains("label", "Inadimplência").parent().find("input[type='checkbox']").should("be.checked"); 
       cy.get("dados-dados-financeiro input[placeholder='Data']").click().clearThenType(data + "{enter}");
@@ -277,7 +277,7 @@ private tabelaSwitchsAbaConfiguracao =
       this.clicarSalvar();
   }
 
-  agendarBloqueio(data) {
+  agendarBloqueio(data: string) {
     cy.get("dados-dados-financeiro input[placeholder='Data']").click().clearThenType(data + "{enter}");
     this.clicarSalvar();
   }
@@ -323,7 +323,7 @@ private tabelaSwitchsAbaConfiguracao =
     cy.get(this.tabelaSwitchsAbaConfiguracao).contains("Validar Notas Fiscais").get(this.switchs).click();
   }
 
-  digitarPesquisarField(texto) {
+  digitarPesquisarField(texto: string) {
     cy.get(this.pesquisarEscritorioField).should("be.visible")
       .click()
       .clearThenType(texto);
@@ -422,7 +422,7 @@ private tabelaSwitchsAbaConfiguracao =
     cy.get(this.modalGrupoDeEmpresas + `input[placeholder='${placeholder}']:visible`).click().clearThenType(texto);
   }
 
-  clicarNoItemInputGrupoDeEmpresas(item, placeholder) {
+  clicarNoItemInputGrupoDeEmpresas(item: string, placeholder: string) {
     cy.get(this.modalGrupoDeEmpresas + `input[placeholder='${placeholder}']:visible`).click();
     cy.get(this.modalGrupoDeEmpresas + "span").should('be.visible').contains(item).click();
   }
@@ -440,7 +440,7 @@ private tabelaSwitchsAbaConfiguracao =
     cy.wait(300); // aguardar fechar modal
   }
 
-  clicarRemoverGrupoEscritorio(grupoEscritorio) {
+  clicarRemoverGrupoEscritorio(grupoEscritorio: string) {
     new TablePage().getItemDaGrade(grupoEscritorio).within(() => {
       cy.get("em[title='Remover']").click();
     });
@@ -451,11 +451,11 @@ private tabelaSwitchsAbaConfiguracao =
     cy.wait(300); // aguardar fechar modal
   }
   
-  digitarDiaReplicar(texto) {
+  digitarDiaReplicar(texto: string) {
     cy.get(this.diaReplicar).clearThenType(texto);
   }
 
-  digitarDadosReplicar(texto) {
+  digitarDadosReplicar(texto: string) {
     cy.get(this.dadosReplicar).clearThenType(texto + "{enter}");
   }
 
@@ -468,7 +468,7 @@ private tabelaSwitchsAbaConfiguracao =
     cy.wait(300); // Aguardar modal abrir
   }
 
-  validarStatusDoCheckBoxAbaEmail(titulo, deveEstarAtivo) {
+  validarStatusDoCheckBoxAbaEmail(titulo: string, deveEstarAtivo: boolean) {
     if (deveEstarAtivo) {
       cy.get('#dados-do-escritorio:visible tbody th').contains(titulo).parent().find('input').should('be.checked');
     }
@@ -487,7 +487,7 @@ private tabelaSwitchsAbaConfiguracao =
       });
   }
 
-  setDataInadimplenciaBloqueioDias(dias) {
+  setDataInadimplenciaBloqueioDias(dias: number) {
     const data = new Date();
     data.setDate(data.getDate() + dias); //ADICIONA DIAS AO DIA DE HOJE
     return data.toLocaleDateString('pt-BR'); //"DD-MM-YYYY";

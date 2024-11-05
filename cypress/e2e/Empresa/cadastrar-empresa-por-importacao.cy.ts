@@ -8,7 +8,6 @@ const menuLateral = new MenuLateralPage();
 
 describe("Validar cadastro de empresas por Importação", () => {
     before(() => {
-        // cy.login(usuarios.sistema.email, usuarios.sistema.senha);
         menuLateral.irParaCadastroDeEmpresas();
     });
 

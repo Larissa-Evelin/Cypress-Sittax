@@ -9,7 +9,6 @@ const menuLateral = new MenuLateralPage();
 
 describe("Validar o cadastro de empresa pelo Certificado digital", () => {
     before(() => {
-        // cy.login(usuarios.sistema.email, usuarios.sistema.senha);
         menuLateral.irParaCadastroDeEmpresas();
     });
 
