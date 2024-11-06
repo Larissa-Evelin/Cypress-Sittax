@@ -6,3 +6,4 @@ export { default as dadosEmpresaPorCertificados } from './empresa/empresa-para-c
 export { default as dadosEmpresaPorExcel } from './empresa/empresa-para-cadastrar-por-excel.json';
 export { default as cadastroUsuario } from './usuario/dados-usuario.json';
 export { default as dadosNotasImportacao } from './notas-importacao/notas-importacao.json';
+export { default as dadosFaturamento } from './faturamento/faturamento.json';

@@ -21,6 +21,8 @@ export default defineConfig({
       apiUrl: "https://localhost:5001/",
       autenticacaoUrl: "https://localhost:6021/api/auth/login"
     },
-    testIsolation: false
+    testIsolation: false,
+    requestTimeout: 15000, 
+    defaultCommandTimeout: 15000
   },
 });

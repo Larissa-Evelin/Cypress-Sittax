@@ -1,7 +1,6 @@
 import { HeaderPage, NotasFiscaisSaidaPage, TablePage, ImportacaoPage } from "../../page-objects";
-import { dadosNotasImportacao as empresaParaTestar } from "../../fixtures";
-//   import usuarios from '../../../../fixtures/03-Usuarios/usuarios.json';
-  
+import { dadosNotasImportacao as empresaParaTestar, usuarios } from "../../fixtures";
+
   const headerPage = new HeaderPage();
   const notasFiscaisSaidaPage = new NotasFiscaisSaidaPage();
   const tablePage = new TablePage();
@@ -10,8 +9,7 @@ import { dadosNotasImportacao as empresaParaTestar } from "../../fixtures";
   
   describe("Testar importação de notas", () => {
     before(() => {
-    //   cy.loginManual(usuarios.sistema.email, usuarios.sistema.senha);
-      
+      cy.login(usuarios.sistema.email, usuarios.sistema.senha);
       headerPage.selecionarEmpresa(empresaParaTestar.cnpjDaEmpresa);
       headerPage.selecionarPeriodo(empresaParaTestar.periodo.ano, empresaParaTestar.periodo.mes);
     });

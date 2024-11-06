@@ -1,17 +1,23 @@
 //ESCRITÓRIO TEMPORARIO, FUTURAMENTE O TESTE TERÁ QUE CRIAR UM ESCRITÓRIO
 //FUTURAMENTE TAMBÉM TERÁ A OPÇÃO DE CADASTRAR PELA ABA USUÁRIOS AO INVÉS DE SOMENTE POR UM ESCRITÓRIO
 
-import { HeaderPage, EscritorioPage, SwalPage, UsuarioPage  } from '../../page-objects';
+import { HeaderPage, EscritorioPage, SwalPage, UsuarioPage, RevendaPage, MenuLateralPage  } from '../../page-objects';
 import { usuarios, cadastroUsuario } from "../../fixtures";
 
 const headerPage = new HeaderPage();
 const escritorioPage = new EscritorioPage();
 const swalPage = new SwalPage();
 const usuarioPage = new UsuarioPage();
+const revendaPage = new RevendaPage();
+const menuLateralPage = new MenuLateralPage();
 
 describe("Testes baseados em cadastrar usuários", () => {
     before(() => {
-        // cy.login(usuarios.sistema.email, usuarios.sistema.senha);
+        cy.login(usuarios.sistema.email, usuarios.sistema.senha);
+        revendaPage.cadastrarRevenda(cadastroUsuario.preRevenda);
+        menuLateralPage.irParaCadastroEscritorio();
+        escritorioPage.cadastrarEscritorio(cadastroUsuario.preEscritorio);
+        menuLateralPage.irParaCadastroDeEmpresas();
         cy.intercept("GET", "*listar-usuarios-por-escritorio-paginacao*").as("usuarioPaginacao");
     });
 

@@ -11,5 +11,27 @@
     "regimeTributario": "Simples Nacional",
     "inscricaoEstadual": "10.250.149-1",
     "dataAbertura": "25/08/1992",
-    "caminhoDoArquivo": "/arquivos/certificados/Sittax Sistema de Inteligência Tributária - Senha Sittax@123 - Validade 02.10.25.pfx"
+    "caminhoDoArquivo": "/arquivos/certificados/Sittax Sistema de Inteligência Tributária - Senha Sittax@123 - Validade 02.10.25.pfx",
+    "preRevenda": {
+        "cnpj": "39.648.579/0001-39",
+        "razaoSocial": "COMMODARE SOLUCOES FINANCEIRAS LTDA",
+        "nomeFantasia": "COMMODARE SOLUCOES FINANCEIRAS",
+        "email": "filipe.varela@live.com",
+        "telefone": "(84) 9406-8818",
+        "uf": "RN",
+        "apelido": "Naruto Uzumaki",
+        "itemUFS": ["RO", "AM"],
+        "keyApiSerpro": "dhasd743h3r32!",
+        "secretApiSerpro": "hgdj223jf"
+      },
+      "preEscritorio": {
+        "cnpj": "23.903.851/0001-40",
+        "razaoSocial": "SELMA APARECIDA DE LIMA 36364876803",
+        "nomeFantasia": "CONTFACILE",
+        "uf": "MG",
+        "municipio": "SÃO JOSÉ DOS CAMPOS",
+        "telefone": "(12) 88829-013",
+        "email": "135458selima@gmail.com",
+        "revendaApelido": "Naruto Uzumaki"
+      }
 }

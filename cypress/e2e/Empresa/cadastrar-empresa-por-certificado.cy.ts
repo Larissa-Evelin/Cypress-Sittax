@@ -1,15 +1,23 @@
-import { EmpresaPage, TablePage, Toaster, SwalPage, MenuLateralPage } from "../../page-objects";
+//ESTÁ FALTANDO A PARTE DE CHAMAR A ROTA DE DELETAR A INFORMÇÃO
+
+import { EmpresaPage, TablePage, Toaster, SwalPage, MenuLateralPage, RevendaPage, EscritorioPage } from "../../page-objects";
 import { usuarios, dadosEmpresaPorCertificados as empresa } from "../../fixtures";
 
 const empresaPage = new EmpresaPage();
 const tablePage = new TablePage();
 const toaster = new Toaster();
 const swalPage = new SwalPage();
-const menuLateral = new MenuLateralPage();
+const menuLateralPage = new MenuLateralPage();
+const revendaPage = new RevendaPage();
+const escritorioPage = new EscritorioPage();
 
 describe("Validar o cadastro de empresa pelo Certificado digital", () => {
     before(() => {
-        menuLateral.irParaCadastroDeEmpresas();
+        cy.login(usuarios.sistema.email, usuarios.sistema.senha);
+        revendaPage.cadastrarRevenda(empresa.preRevenda);
+        menuLateralPage.irParaCadastroEscritorio();
+        escritorioPage.cadastrarEscritorio(empresa.preEscritorio);
+        menuLateralPage.irParaCadastroDeEmpresas();
     });
 
     it("Cadastrar empresa por Certificado", () => {

@@ -1,4 +1,5 @@
-import { MenuLateralPage, PeriodoPage } from "../";
+import { MenuLateralPage, PeriodoPage, TablePage } from "../";
+import { dadosFaturamento } from "../../fixtures"
 
 //MODAL
 const tituloDoModal = " .modalTitle";
@@ -131,7 +132,6 @@ const spanTributaPisConfins =
 const spanTributaIpi =
     "app-modal-da-empresa:visible :nth-child(5) > .ml-auto > .switch > span"
 
-
 //ABA CADASTRAR EMPRESA POR CERTIFICADO
 const abaCadastrarPorCertificado = "Cadastrar Por Certificado";
 const importarCertificadoButtonAbaCadastrarPorCertificado = "#file-input";
@@ -207,9 +207,16 @@ interface IData {
     mes: string
 }
 
+interface IDadosDeclaracao {
+    periodo: string,
+    valorComppetencia: string,
+    valorTotal: string,
+}
+
 export default class EmpresaPage {
 
     private periodoPage = new PeriodoPage();
+    private tablePage = new TablePage();
 
     cadastrarEmpresa(cnpj: string, escritorio: string) {
         cy.intercept("POST", "**/cadastrar-empresa").as("cadastrarEmpresa");
@@ -225,6 +232,24 @@ export default class EmpresaPage {
         this.clicarSalvarAbaGeral();
         cy.wait("@cadastrarEmpresa");
     }
+
+    checkOsValoresDaDeclaracao(declaracao: IDadosDeclaracao){
+        this.tablePage.getItemDaGrade(declaracao.periodo).find("td").eq(0).invoke("text").then(($texto: string) => {
+            const textoFormatado = $texto.replace(/\u00a0/g, ' ').trim();
+            expect(textoFormatado).to.eq(declaracao.periodo);
+        });
+
+        this.tablePage.getItemDaGrade(declaracao.periodo).find("td").eq(1).invoke("text").then(($texto: string) => {
+            const textoFormatado = $texto.replace(/\u00a0/g, ' ').trim();
+            expect(textoFormatado).to.eq(declaracao.valorComppetencia);
+        });
+
+        this.tablePage.getItemDaGrade(declaracao.periodo).find("td").eq(4).invoke("text").then(($texto: string) => {
+            const textoFormatado = $texto.replace(/\u00a0/g, ' ').trim();
+            expect(textoFormatado).to.eq(declaracao.valorTotal);
+        });
+    }
+    
 
     cadastrarEmpresaPorExcel(caminhoDoCertificado: string){
         cy.intercept("POST", "**/upload/CadastrarEmpresaPorExcel").as("uploadExcel");

@@ -1,13 +1,18 @@
-import { EscritorioPage, TablePage, Toaster, MenuLateralPage } from "../../page-objects";
+//ESTÁ FALTANDO A PARTE DE CHAMAR A ROTA DE DELETAR A INFORMÇÃO
+
+import { EscritorioPage, TablePage, Toaster, MenuLateralPage, RevendaPage } from "../../page-objects";
 import { usuarios, dadosEscritorio as escritorio } from "../../fixtures";
 
 const escritorioPage = new EscritorioPage();
 const tablePage = new TablePage();
 const toaster = new Toaster();
 const menuLateralPage = new MenuLateralPage();
+const revendaPage = new RevendaPage();
 
 describe('Quando todas as informações obrigatórias forem preenchidas ao criar o cadastro de um escritório, o sistema deve salvar a escritório com sucesso', () => {
     before(() => {
+        cy.login(usuarios.sistema.email, usuarios.sistema.senha);
+        revendaPage.cadastrarRevenda(escritorio.preRevenda);
         menuLateralPage.irParaCadastroEscritorio();
     });
     context('Cadastrar escritório', () => {

@@ -1,6 +1,8 @@
+import MenuLateralPage from "../menuLateral/menuLateralPage";
 import TablePage from "../table/tablePage";
 import Toaster from "../toaster/toaster";
 
+const menuLateralPage = new MenuLateralPage();
 const tablePage = new TablePage();
 // const escritorioPage = new EscritorioPage();
 const toaster = new Toaster();
@@ -216,5 +218,12 @@ export default class RevendaPage {
             cy.contains("button", "Salvar").should("have.attr", "disabled");
         });
         cy.contains("button:visible", "Fechar").click();
+    }
+
+    cadastrarRevenda(dadosRevenda: IRevenda) {
+        menuLateralPage.irParaCadastroRevenda();
+        this.clicarBotaoNovaRevenda();
+        this.preencherFormulario(dadosRevenda);
+        this.salvarNovaRevenda();
     }
 }

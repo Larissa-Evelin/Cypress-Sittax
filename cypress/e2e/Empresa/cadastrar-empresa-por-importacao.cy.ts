@@ -1,26 +1,34 @@
-import { EmpresaPage, TablePage, SwalPage, MenuLateralPage } from "../../page-objects";
+//ESTÁ FALTANDO A PARTE DE CHAMAR A ROTA DE DELETAR A INFORMÇÃO
+
+import { EmpresaPage, TablePage, SwalPage, MenuLateralPage, RevendaPage, EscritorioPage } from "../../page-objects";
 import { usuarios, dadosEmpresaPorExcel as empresas } from "../../fixtures";
 
 const empresaPage = new EmpresaPage();
 const tablePage = new TablePage();
 const swalPage = new SwalPage();
-const menuLateral = new MenuLateralPage();
+const menuLateralPage = new MenuLateralPage();
+const revendaPage = new RevendaPage();
+const escritorioPage = new EscritorioPage();
 
 describe("Validar cadastro de empresas por Importação", () => {
     before(() => {
-        menuLateral.irParaCadastroDeEmpresas();
+        cy.login(usuarios.sistema.email, usuarios.sistema.senha);
+        revendaPage.cadastrarRevenda(empresas.preRevenda);
+        menuLateralPage.irParaCadastroEscritorio();
+        escritorioPage.cadastrarEscritorio(empresas.preEscritorio);
+        menuLateralPage.irParaCadastroDeEmpresas();
     });
 
     context("Valida cadastro de empresa via importação", () => {
         it("Importar empresas por xlsx", () => {
-            empresaPage.cadastrarEmpresaPorExcel(empresas[0].caminhoDoArquivo);
+            empresaPage.cadastrarEmpresaPorExcel(empresas.arrayEmpresas[0].caminhoDoArquivo);
             swalPage.getMensagem().should('contain', "2 CNPJ(s) cadastrado(s) com sucesso");
             swalPage.clicarOk();
             empresaPage.clicarFechar();
         });
 
-        it.skip("Importar empresas por xlsx novamente -> Deve gerar erro", () => {
-            empresaPage.cadastrarEmpresaPorExcel(empresas[0].caminhoDoArquivo);
+        it("Importar empresas por xlsx novamente -> Deve gerar erro", () => {
+            empresaPage.cadastrarEmpresaPorExcel(empresas.arrayEmpresas[0].caminhoDoArquivo);
             swalPage.getTitulo().should('contain', "Houve um problema ao importar as empresas:");
             swalPage.clicarOk();
             empresaPage.clicarFechar();
@@ -28,7 +36,7 @@ describe("Validar cadastro de empresas por Importação", () => {
     });
 
     context("Validar dados da empresa cadastrada", () => {
-        empresas.forEach(empresa => {
+        empresas.arrayEmpresas.forEach(empresa => {
             it("Verificar se a empresa " + empresa.cnpj + " está na grade", () => {
                 tablePage.digitarPesquisarField(empresa.cnpj);
                 empresaPage.getItensGradeListaDeEmpresas().should('contain', empresa.cnpj);

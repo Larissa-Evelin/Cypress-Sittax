@@ -9,7 +9,7 @@ export default class ImportacaoPage {
     new MenuLateralPage().irParaImportacaoDocumentosFiscais();
   }
 
-  importarNotaFiscal(arquivo) {
+  importarNotaFiscal(arquivo: string) {
     cy.fixture(arquivo, "base64").then((data) => {
       cy.get(importacaoButton).attachFile({
         filePath: arquivo,

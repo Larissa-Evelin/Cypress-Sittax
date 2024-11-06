@@ -1,13 +1,19 @@
-
 {
-    "cnpj": "52.087.022/0001-34",
-    "escritorio": "SELMA APARECIDA DE LIMA 36364876803",
-    "razaoSocial": "IMPERIO NORTE PORANGATU LTDA",
-    "nomeFantasia": "CRIA FOOD",
-    "uf": "GO",
-    "municipio": "PORANGATU",
-    "telefone": "(62) 84262-926",
-    "email": "",
+   "dados": {
+    "periodo": "08/2024",
+    "valorComppetencia": "R$ 20.178,96",
+    "valorTotal": "R$ 20.178,96"
+   },
+    "preEmpresa":{
+        "cnpj": "51.708.245/0001-09",
+        "escritorio": "SELMA APARECIDA DE LIMA 36364876803",
+        "razaoSocial": "ULTRA ENGARRAFAMENTO DE BEBIDAS LTDA",
+        "nomeFantasia": "CRIA FOOD",
+        "uf": "SP",
+        "municipio": "PORANGATU",
+        "telefone": "(17) 30421-256",
+        "email": "contato@eccaldato.com.br"
+    },
     "preRevenda": {
         "cnpj": "17.430.688/0001-42",
         "razaoSocial": "POLYTUBOS DISTRIBUIDORA DE TUBOS LTDA",
@@ -29,6 +35,8 @@
         "telefone": "(12) 88829-013",
         "email": "135458selima@gmail.com",
         "revendaApelido": "Naruto Uzumaki"
+      },
+      "arquivo": {
+        "path": "arquivos/declaracoes/comprovante-declaracao-51708245202408001.pdf"
       }
-
-}
+}    
