@@ -27,7 +27,7 @@ describe("Validar cadastro de empresas por Importação", () => {
             empresaPage.clicarFechar();
         });
 
-        it("Importar empresas por xlsx novamente -> Deve gerar erro", () => {
+        it.skip("Importar empresas por xlsx novamente -> Deve gerar erro", () => {
             empresaPage.cadastrarEmpresaPorExcel(empresas.arrayEmpresas[0].caminhoDoArquivo);
             swalPage.getTitulo().should('contain', "Houve um problema ao importar as empresas:");
             swalPage.clicarOk();

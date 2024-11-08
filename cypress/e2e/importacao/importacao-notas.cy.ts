@@ -1,15 +1,25 @@
-import { HeaderPage, NotasFiscaisSaidaPage, TablePage, ImportacaoPage } from "../../page-objects";
+import { HeaderPage, NotasFiscaisSaidaPage, TablePage, ImportacaoPage, RevendaPage, MenuLateralPage, EscritorioPage, EmpresaPage, SwalPage } from "../../page-objects";
 import { dadosNotasImportacao as empresaParaTestar, usuarios } from "../../fixtures";
 
   const headerPage = new HeaderPage();
   const notasFiscaisSaidaPage = new NotasFiscaisSaidaPage();
   const tablePage = new TablePage();
   const importacaoPage = new ImportacaoPage();
-  
+  const revendaPage = new RevendaPage();
+  const menuLateralPage = new MenuLateralPage();
+  const escritorioPage = new EscritorioPage();
+  const empresaPage = new EmpresaPage();
+  const swalPage = new SwalPage();
   
   describe("Testar importação de notas", () => {
     before(() => {
       cy.login(usuarios.sistema.email, usuarios.sistema.senha);
+      revendaPage.cadastrarRevenda(empresaParaTestar.preRevenda);
+      menuLateralPage.irParaCadastroEscritorio();
+      escritorioPage.cadastrarEscritorio(empresaParaTestar.preEscritorio);
+      menuLateralPage.irParaCadastroDeEmpresas();
+      empresaPage.cadastrarEmpresa(empresaParaTestar.preEmpresa.cnpj, empresaParaTestar.preEscritorio.cnpj);
+      swalPage.clicarOk();
       headerPage.selecionarEmpresa(empresaParaTestar.cnpjDaEmpresa);
       headerPage.selecionarPeriodo(empresaParaTestar.periodo.ano, empresaParaTestar.periodo.mes);
     });

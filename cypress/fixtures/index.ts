@@ -7,3 +7,5 @@ export { default as dadosEmpresaPorExcel } from './empresa/empresa-para-cadastra
 export { default as cadastroUsuario } from './usuario/dados-usuario.json';
 export { default as dadosNotasImportacao } from './notas-importacao/notas-importacao.json';
 export { default as dadosFaturamento } from './faturamento/faturamento.json';
+export { default as dadosContador } from './contador/escritorio-contador.json';
+export { default as socioDados } from './socio/escritorio-socio.json';

@@ -1,0 +1,15 @@
+{
+    "escritorioCnpj": "37.411.535/0001-65",
+    "nome": "Contador Teste",
+    "CPF": "123.410.420-23",
+    "CRC": "3SP111111O3",
+    "endereco": {
+        "logradouro": "Lograteste",
+        "bairro": "bairroteste",
+        "numero": "2233",
+        "complemento": "complementoteste",
+        "cep": "51.322-578"
+    },
+    "telefone": "11111111111",
+    "email": "contadorteste@teste.com"
+}

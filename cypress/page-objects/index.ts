@@ -12,6 +12,10 @@ export { default as UsuarioPage } from './usuario/usuarioPage';
 export { default as NotasFiscaisEntradaPage } from './notas-saida-entrada/notas-fiscais-entrada-page';
 export { default as NotasFiscaisSaidaPage } from './notas-saida-entrada/notas-fiscais-saida-page';
 export { default as ImportacaoPage } from './importacao/importacao-page';
+export { default as ContadorPage } from './contador/contador-page';
+export { default as SocioPage } from './socio/socio-page';
+
+
 
 
 
