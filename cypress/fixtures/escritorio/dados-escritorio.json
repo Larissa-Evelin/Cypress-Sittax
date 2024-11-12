@@ -1,22 +1,25 @@
 {
-    "cnpj": "12.934.346/0001-46",
-    "razaoSocial": "UBERCONTA UBERABA CONTABILIDADE LTDA",
-    "nomeFantasia": "UBERCONTA",
-    "uf": "MG",
-    "municipio": "UBERABA",
-    "telefone": "(34) 33125-900",
-    "email": "uberconta@uberconta.com.br",
-    "revendaApelido": "Kakashi Hatake",
-    "preRevenda": {
-      "cnpj": "18.903.291/0001-93",
-      "razaoSocial": "MARTA HELENA DE OLIVEIRA 04647669823",
-      "nomeFantasia": "MARTA HELENA DE OLIVEIRA 04647669823",
-      "email": "maria@test.com",
-      "telefone": "(16) 9225-6183",
-      "uf": "SP",
-      "apelido": "Kakashi Hatake",
-      "itemUFS": ["RO", "AM"],
-      "keyApiSerpro": "dhasd743h3r32!",
-      "secretApiSerpro": "hgdj223jf"
-    }
+  "cnpj": "12.934.346/0001-46",
+  "razaoSocial": "UBERCONTA UBERABA CONTABILIDADE LTDA",
+  "nomeFantasia": "UBERCONTA",
+  "uf": "MG",
+  "municipio": "UBERABA",
+  "telefone": "(34) 33125-900",
+  "email": "uberconta@uberconta.com.br",
+  "revendaApelido": "Kakashi Hatake",
+  "preRevenda": {
+    "cnpj": "18.903.291/0001-93",
+    "razaoSocial": "MARTA HELENA DE OLIVEIRA 04647669823",
+    "nomeFantasia": "MARTA HELENA DE OLIVEIRA 04647669823",
+    "email": "maria@test.com",
+    "telefone": "(16) 9225-6183",
+    "uf": "SP",
+    "apelido": "Kakashi Hatake",
+    "itemUFS": [
+      "RO",
+      "AM"
+    ],
+    "keyApiSerpro": "dhasd743h3r32!",
+    "secretApiSerpro": "hgdj223jf"
   }
+}

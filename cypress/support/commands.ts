@@ -1,4 +1,7 @@
 /// <reference types="cypress" />
+
+import { Toaster } from "../page-objects";
+
 // ***********************************************
 // This example commands.ts shows you how to
 // create various custom commands and overwrite
@@ -11,6 +14,14 @@
 //
 //
 // -- This is a parent command --
+
+ interface IUsuario {
+  email: string,
+  senha: string
+}
+
+const toaster = new Toaster();
+
 Cypress.Commands.add('login', (email: string, password:string) => { 
     cy.intercept("POST", "**/login").as("login");
     cy.visit('/'); 
@@ -28,6 +39,32 @@ Cypress.Commands.add('login', (email: string, password:string) => {
   cy.wrap(subject).clear().type(text);
 }
 );
+
+Cypress.Commands.add("logout", () => {
+  cy.get("img[src='assets/img/logout.svg']").click({ force: true })
+  cy.clearLocalStorage();
+});
+
+Cypress.Commands.add("primeiroLogin", (usuario: IUsuario, senhaGerada: string) => {
+  cy.login(usuario.email, senhaGerada);
+
+  //TROCAR SENHA DO PRIMEIRO ACESSO
+  cy.get("app-recuperar-senha form")
+    .find("sittax-input-field-password[formcontrolname='senha'] input[type='password']")
+    .type(usuario.senha);
+
+  //CONFIRMAR SENHA
+  cy.get("app-recuperar-senha form")
+    .find("sittax-input-field-password[formcontrolname='confirmacaoSenha'] input[type='password']")
+    .type(usuario.senha);
+
+  cy.contains("button", "Criar senha").click();
+  toaster.verificaMensagemDoToaster("Senha alterada com sucesso");
+  
+  //LOGIN COM A NOVA SENHA
+  cy.login(usuario.email, usuario.senha); 
+});
+
 
 //
 //

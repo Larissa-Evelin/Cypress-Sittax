@@ -1,0 +1,66 @@
+{
+    "cnpjEscritorio": "37.411.535/0001-65",
+    "inputNomeDoGrupo": "Digite o nome do grupo",
+    "nomeDoGrupo": "GE-Empresa Teste",
+    "inputNomeDaEmpresa": "Digite o nome da empresa",
+    "nomeDaEmpresa1": "SITTAX SISTEMA DE INTELIGENCIA TRIBUTARIA LTDA",
+    "nomeDaEmpresa2": "BIRIBA SERVICE E INDUSTRIA DE ACESSORIOS PARA CAMINHOES LTDA",
+    "inputAdicionarEmpresa": "Adicionar uma empresa",
+    "inputAdicionarUsuario": "Adicionar um usuário",
+    "inputNomeDoUsuario": "Digite o nome do usuário",
+    "nomeDoUsuario1": "Zabuza",
+    "nomeDoUsuario2": "Kabuto",
+    "nomeDoGrupoAlterado": "GE-Empresa Teste Alterado",
+    "qtdEmpresasGrupoInativo": "Carregado 2 de 2 empresas",
+    "escritorioGrupoEmpresaInativo": "SITTAX SISTEMA DE INTELIGENCIA TRIBUTARIA LTDA",
+    "preEmpresa": [
+        {
+            "cnpj": "37.411.535/0001-65",
+            "escritorio": "SITTAX",
+            "razaoSocial": "SITTAX SISTEMA DE INTELIGENCIA TRIBUTARIA LTDA",
+            "nomeFantasia": "Kabuto Nore",
+            "uf": "GO",
+            "municipio": "GOIÂNIA",
+            "telefone": "(62) 81178-504",
+            "email": ""
+        },
+        {
+            "cnpj": "08.531.903/0001-00",
+            "escritorio": "SITTAX",
+            "razaoSocial": "BIRIBA SERVICE E INDUSTRIA DE ACESSORIOS PARA CAMINHOES LTDA",
+            "nomeFantasia": "BIRIBA SERVICE",
+            "uf": "GO",
+            "municipio": "GOIÂNIA",
+            "telefone": "(62) 84262-926",
+            "email": ""
+        }
+    ],
+    "preEscritorio": {
+        "cnpj": "37.411.535/0001-65",
+        "razaoSocial": "SITTAX SISTEMA DE INTELIGENCIA TRIBUTARIA LTDA",
+        "nomeFantasia": "SITTAX",
+        "uf": "GO",
+        "municipio": "GOIÂNIA",
+        "telefone": "(62) 81178-504",
+        "email": "victorbrenno.lacerda@gmail.com",
+        "revendaApelido": "Naruto Uzumaki"
+    },
+    "preUsuarios": [
+        {
+            "nome": "Zabuza",
+            "sobrenome": "Momochi",
+            "email": "ZabusaMomochi@testesittax.com",
+            "telefone": "6299999999",
+            "senha": "@Sittax#",
+            "perfilDeAcesso": "ADMINISTRADOR DO ESCRITORIO"
+        },
+        {
+            "nome": "Kabuto",
+            "sobrenome": "Sushi",
+            "email": "KabutoSushi@testesittax.com",
+            "telefone": "6299999999",
+            "senha": "@Sittax#",
+            "perfilDeAcesso": "ADMINISTRADOR DO ESCRITORIO"
+        }
+    ]
+}

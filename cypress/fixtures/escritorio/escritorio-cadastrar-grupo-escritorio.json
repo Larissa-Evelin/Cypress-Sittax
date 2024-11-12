@@ -1,0 +1,83 @@
+{
+    "escritorioPai": {
+        "cnpj": "12.934.346/0001-46",
+        "razaoSocial": "UBERCONTA UBERABA CONTABILIDADE LTDA",
+        "nomeFantasia": "UBERCONTA",
+        "uf": "MG",
+        "municipio": "UBERABA",
+        "telefone": "(34) 33125-900",
+        "email": "uberconta@uberconta.com.br",
+        "revendaApelido": "SETUP",
+        "usuario": {
+            "nome": "admEscritorio",
+            "sobrenome": "Escritorio Pai",
+            "email": "admescritorio.escritoriopai@setup.com.br",
+            "telefone": "6299999999",
+            "perfilDeAcesso": "ADMINISTRADOR DO ESCRITORIO",
+            "senhaGerada": "sittax123",
+            "senhaNova": "sittax"
+        }
+    },
+    "grupoEscritorio": {
+        "label": "CNPJ",
+        "cnpj": "19.121.296/0003-99"
+    },
+    "email": "candida@teste.com",
+    "mensagemToaster": "Escritório adicionado ao grupo de escritórios com sucesso!",
+    "nome": "CANDIDA & PORTO SANDUICHERIA LTDA",
+    "nomeFantasia": "SANDUICHERIA KOMIKETO",
+    "usuarioGrupoEscritorio": {
+        "nome": "admEscritorio",
+        "sobrenome": "GrupoEscritorio",
+        "email": "admescritorio.grupoescritorio@setup.com.br",
+        "telefone": "6299999999",
+        "perfilDeAcesso": "ADMINISTRADOR DO ESCRITORIO",
+        "senhaGerada": "sittax123",
+        "senhaNova": "sittax"
+    },
+    "preUsuario": [
+        {
+            "email": "lobe.admescritorio@setup.com.br",
+            "senha": "@Sittax#"
+        },
+        {
+            "email": "lobe.grupoescritorio@setup.com.br",
+            "senha": "@Sittax#"
+        }
+    ],
+    "preRevenda": {
+        "cnpj": "17.430.688/0001-42",
+        "razaoSocial": "POLYTUBOS DISTRIBUIDORA DE TUBOS LTDA",
+        "nomeFantasia": "POLYTUBOS DISTRIBUIDORA DE TUBOS",
+        "email": "rogeriocunha@polytubospvc.com.br",
+        "telefone": "(31) 9817-2871",
+        "uf": "MG",
+        "apelido": "Naruto Uzumaki",
+        "itemUFS": [
+            "RO",
+            "AM"
+        ],
+        "keyApiSerpro": "dhasd743h3r32!",
+        "secretApiSerpro": "hgdj223jf"
+    },
+    "preEmpresa":{
+        "cnpj": "52.087.022/0001-34",
+        "escritorio": "SELMA APARECIDA DE LIMA 36364876803",
+        "razaoSocial": "IMPERIO NORTE PORANGATU LTDA",
+        "nomeFantasia": "CRIA FOOD",
+        "uf": "GO",
+        "municipio": "PORANGATU",
+        "telefone": "(62) 84262-926",
+        "email": ""
+    },
+
+    "empresasArquivo": "/arquivos/empresas/5empresas.xlsx",
+    "empresasParaMover": [
+        "07.631.319/0001-64",
+        "15.101.674/0001-50"
+    ],
+    "escritorioLobe": "LOBE CONSULTORIA TRIBUTARIA E GESTAO CONTABIL LTDA",
+    "cnpjLobe": "28.387.388/0001-44",
+    "cnpjEscritorioDesvincular": "20.118.248/0001-69",
+    "mensagemDesvincularNegado": "Não é possível desvincular o escritório do grupo de escritório pois a quantidade de empresas excede o plano atual do escritório."
+}

@@ -1,0 +1,53 @@
+{
+    "escritorio": {
+        "cnpj": "52.257.865/0001-31",
+        "razaoSocial": "SABRINA BORGES SARAIVA DA SILVA CONSULTORIA DE MARKETING LTDA",
+        "nomeFantasia": "SABRINA SARAIVA CONSULTORIA DE MARKETING",
+        "uf": "SP",
+        "municipio": "BARUERI",
+        "telefone": "(99) 999999-999",
+        "email": "inadimplentebloqueio@testesittax.com",
+        "revendaApelido": "SITTAX"
+    },
+
+    "usuario":  {
+        "nome": "Inadimplente",
+        "sobrenome": "Teste",
+        "email": "inadimplente.bloqueio@testesittax.com",
+        "telefone": "6299999999",
+        "senha": "@Sittax#",
+        "perfilDeAcesso": "ADMINISTRADOR DO ESCRITORIO"
+    },
+    "preRevenda": {
+        "cnpj": "17.430.688/0001-42",
+        "razaoSocial": "POLYTUBOS DISTRIBUIDORA DE TUBOS LTDA",
+        "nomeFantasia": "POLYTUBOS DISTRIBUIDORA DE TUBOS",
+        "email": "rogeriocunha@polytubospvc.com.br",
+        "telefone": "(31) 9817-2871",
+        "uf": "MG",
+        "apelido": "Naruto Uzumaki",
+        "itemUFS": ["RO", "AM"],
+        "keyApiSerpro": "dhasd743h3r32!",
+        "secretApiSerpro": "hgdj223jf"
+      },
+      "preEscritorio": {
+        "cnpj": "23.903.851/0001-40",
+        "razaoSocial": "SELMA APARECIDA DE LIMA 36364876803",
+        "nomeFantasia": "CONTFACILE",
+        "uf": "MG",
+        "municipio": "SÃO JOSÉ DOS CAMPOS",
+        "telefone": "(12) 88829-013",
+        "email": "135458selima@gmail.com",
+        "revendaApelido": "Naruto Uzumaki"
+      },
+      "preEmpresa":{
+        "cnpj": "52.087.022/0001-34",
+        "escritorio": "SELMA APARECIDA DE LIMA 36364876803",
+        "razaoSocial": "IMPERIO NORTE PORANGATU LTDA",
+        "nomeFantasia": "CRIA FOOD",
+        "uf": "GO",
+        "municipio": "PORANGATU",
+        "telefone": "(62) 84262-926",
+        "email": ""
+    }
+}

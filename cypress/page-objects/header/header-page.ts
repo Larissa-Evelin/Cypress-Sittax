@@ -60,7 +60,7 @@ export default class HeaderPage {
     cy.get("#selectHeaderEmpresas").click().should("contain.text", empresa);
   }
 
-  verificarQtdEmpresas(qtdEmpresas: number) {
+  verificarQtdEmpresas(qtdEmpresas: string) {
     cy.get("#selectHeaderEmpresas").click().find("small").invoke("text").then(($text) => {
       var texto = $text.replace(/\s+/g, ' ').trim();
       expect(texto).to.eq(qtdEmpresas);

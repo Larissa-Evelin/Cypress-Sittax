@@ -9,3 +9,7 @@ export { default as dadosNotasImportacao } from './notas-importacao/notas-import
 export { default as dadosFaturamento } from './faturamento/faturamento.json';
 export { default as dadosContador } from './contador/escritorio-contador.json';
 export { default as socioDados } from './socio/escritorio-socio.json';
+export { default as dadosConsultarCnpj } from './escritorio/escritorio-para-consultar-cnpj.json';
+export { default as escritorioGrupoEmpresa } from './escritorio/escritorio-cadastrar-grupo-empresa.json';
+export { default as escritorioGrupoEscritorio } from './escritorio/escritorio-cadastrar-grupo-escritorio.json';
+export { default as inadimplenteBloqueio } from './escritorio/inadimplente-bloqueio.json';

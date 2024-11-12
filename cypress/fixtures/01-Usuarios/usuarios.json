@@ -1,6 +1,14 @@
 {
     "sistema": {
-    "email": "sistema@sittax.com.br",
-    "senha": "senhas"
-   }
+        "email": "sistema@sittax.com.br",
+        "senha": "senhas"
+    },
+    "glaucyo": {
+        "email": "glaucyo",
+        "senha": "36413052"
+    },
+    "revendaSittax": {
+        "email": "revenda@sittax.com.br",
+        "senha": "@Sittax#"
+    }
 }
