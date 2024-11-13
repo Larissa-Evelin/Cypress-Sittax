@@ -1,0 +1,48 @@
+{
+    "cnpj": "14.732.748/0001-93",
+    "cadastroPorCPF": false,
+    "razaoSocial": "MOSSAMBANI SERVICOS CONTABEIS LTDA",
+    "nomeFantasia": "ESCRITORIO CONTABIL MOSSAMBANI",
+    "uf": "PR",
+    "municipio": "RONDON",
+    "telefone": "(44) 36722-417",
+    "email": "contato@mossambani.com.br",
+    "revendaApelido": "Naruto Uzumaki",
+    "empresas": [
+        {
+            "cnpj": "36.117.761/0001-75",
+            "escritorio": "MOSSAMBANI SERVICOS CONTABEIS LTDA",
+            "razaoSocial": "DROGARIA EL SHADAY A H LTDA",
+            "nomeFantasia": "DROGARIA EL SHADAY",
+            "uf": "GO",
+            "municipio": "ALTO HORIZONTE",
+            "telefone": "(62) 33833-138",
+            "email": ""
+        },
+        {
+            "cnpj": "42.535.522/0001-38",
+            "escritorio": "MOSSAMBANI SERVICOS CONTABEIS LTDA",
+            "razaoSocial": "SEBASTIAO SIDINE CARVALHO MARTINS",
+            "nomeFantasia": "AGUIA SERRANA",
+            "uf": "SP",
+            "municipio": "GUARULHOS",
+            "telefone": "(11) 24666-189",
+            "email": "genesis@genesiscontabilidade.net"
+        }
+    ],
+    "preRevenda": {
+        "cnpj": "17.430.688/0001-42",
+        "razaoSocial": "POLYTUBOS DISTRIBUIDORA DE TUBOS LTDA",
+        "nomeFantasia": "POLYTUBOS DISTRIBUIDORA DE TUBOS",
+        "email": "rogeriocunha@polytubospvc.com.br",
+        "telefone": "(31) 9817-2871",
+        "uf": "MG",
+        "apelido": "Naruto Uzumaki",
+        "itemUFS": [
+            "RO",
+            "AM"
+        ],
+        "keyApiSerpro": "dhasd743h3r32!",
+        "secretApiSerpro": "hgdj223jf"
+    }
+}

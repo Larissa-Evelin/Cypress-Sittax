@@ -13,3 +13,4 @@ export { default as dadosConsultarCnpj } from './escritorio/escritorio-para-cons
 export { default as escritorioGrupoEmpresa } from './escritorio/escritorio-cadastrar-grupo-empresa.json';
 export { default as escritorioGrupoEscritorio } from './escritorio/escritorio-cadastrar-grupo-escritorio.json';
 export { default as inadimplenteBloqueio } from './escritorio/inadimplente-bloqueio.json';
+export { default as escritorioInativar } from './escritorio/escritorio-inativar.json';

@@ -9,15 +9,23 @@
         "email": "inadimplentebloqueio@testesittax.com",
         "revendaApelido": "SITTAX"
     },
-
-    "usuario":  {
-        "nome": "Inadimplente",
-        "sobrenome": "Teste",
-        "email": "inadimplente.bloqueio@testesittax.com",
-        "telefone": "6299999999",
-        "senha": "@Sittax#",
-        "perfilDeAcesso": "ADMINISTRADOR DO ESCRITORIO"
+    "preUsuario":[{
+      "nome": "Financeiro",
+      "sobrenome": "Itachi",
+      "email": "financeiro.bloqueio@testesittax.com",
+      "telefone": "6299999999",
+      "senha": "@Sittax#",
+      "perfilDeAcesso": "ADMINISTRADOR DO ESCRITORIO"
     },
+    {
+      "nome": "Inadimplente",
+      "sobrenome": "Teste",
+      "email": "inadimplente.bloqueio@testesittax.com",
+      "telefone": "6299999999",
+      "senha": "@Sittax#",
+      "perfilDeAcesso": "ADMINISTRADOR DO ESCRITORIO"
+  } 
+  ],
     "preRevenda": {
         "cnpj": "17.430.688/0001-42",
         "razaoSocial": "POLYTUBOS DISTRIBUIDORA DE TUBOS LTDA",

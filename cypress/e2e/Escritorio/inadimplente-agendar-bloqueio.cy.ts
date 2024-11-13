@@ -1,5 +1,6 @@
-import { MenuLateralPage, HeaderPage, EscritorioPage, Toaster, SwalPage, RevendaPage, EmpresaPage, UsuarioPage } from "../../page-objects";
+import { MenuLateralPage, HeaderPage, EscritorioPage, Toaster, SwalPage, RevendaPage, EmpresaPage, UsuarioPage, TablePage } from "../../page-objects";
 import { usuarios, inadimplenteBloqueio } from "../../fixtures";
+import { forEach } from "cypress/types/lodash";
 
 const menuLateralPage = new MenuLateralPage();
 const headerPage = new HeaderPage();
@@ -7,8 +8,8 @@ const escritorioPage = new EscritorioPage();
 const toaster = new Toaster();
 const swalPage = new SwalPage();
 const revendaPage = new RevendaPage();
-const empresaPage = new EmpresaPage();
 const usuarioPage = new UsuarioPage();
+const tablePage = new TablePage();
 
 describe("Marcar inadimplente, verificar mensagem de aviso, agendar bloqueio e verificar se usuário foi bloqueado", () => {
     context("Cadastrar escritório e usuário para testes", () => {
@@ -19,35 +20,48 @@ describe("Marcar inadimplente, verificar mensagem de aviso, agendar bloqueio e v
         });
 
         it(`Cadastrar escritório ${inadimplenteBloqueio.escritorio.razaoSocial}`, () => {
-            escritorioPage.cadastrarEscritorio(inadimplenteBloqueio.escritorio);
+            escritorioPage.cadastrarEscritorio(inadimplenteBloqueio.preEscritorio);
             escritorioPage.clicarFechar();
             toaster.verificaMensagemDoToaster("Escritório cadastrado!");
         });
 
-        it(`Cadastrar usuário ${inadimplenteBloqueio.usuario.nome} no escritório e gerar senha de acesso`, () => {
+        it(`Cadastrar usuário com perfil financeiro e administrador do escritório`, () => {
             //CADASTRAR USUÁRIO
-            headerPage.selecionarEscritorio(inadimplenteBloqueio.escritorio.cnpj);
             headerPage.abrirEscritorioHeader();
+            inadimplenteBloqueio.preUsuario.forEach((usuario) => {
+                escritorioPage.clicarAbaUsuario();
+                escritorioPage.clicarCadastrarNovoUsuarioButtonAbaUsuario();
+                usuarioPage.cadastrarAlterarUsuario(usuario);
+                escritorioPage.clicarSalvar();
+                swalPage.clicarOk();
 
-            escritorioPage.clicarAbaUsuario();
-            escritorioPage.clicarCadastrarNovoUsuarioButtonAbaUsuario();
-            usuarioPage.cadastrarAlterarUsuario(inadimplenteBloqueio.usuario);
-            escritorioPage.clicarSalvar();
-            swalPage.clicarOk();
-
-            //GERAR SENHA
-            escritorioPage.clicarGerarSenha(inadimplenteBloqueio.usuario.email);
-            escritorioPage.getSenhaGerada().then(($text) => {
-                Cypress.env('senhaGerada', $text); //ARMAZENAR SENHA 
+                // Gerar senha
+                escritorioPage.clicarGerarSenha(usuario.email);
+                escritorioPage.getSenhaGerada().then(($text) => {
+                    Cypress.env(`senhaGerada${usuario.nome}`, $text);
+                });
+                swalPage.clicarOk();
             });
-            swalPage.clicarOk();
+            escritorioPage.clicarFecharBotao();
+            menuLateralPage.irParaCadastroUsuario();
+            tablePage.digitarPesquisarField(inadimplenteBloqueio.preUsuario[0].email);
+            tablePage.clicarNoElementoDaGradeQueContemOTexto(inadimplenteBloqueio.preUsuario[0].email);
+            usuarioPage.selecionarPerfil("FINANCEIRO");
+            toaster.verificaMensagemDoToaster("Perfil adicionado com sucesso!");
+            usuarioPage.clicarFechar();
         });
     });
 
     context("Marcar inadimplência e agendar bloqueio", () => {
         it("Marcar inadimplência para 5 dias", () => {
             const dataInadimplencia = escritorioPage.setDataInadimplenciaBloqueioDias(5);
+            const nomeUsuario = inadimplenteBloqueio.preUsuario[0].nome;
+            const senhaFinanceiro = Cypress.env(`senhaGerada${nomeUsuario}`);
 
+            cy.logout();
+            cy.primeiroLogin(inadimplenteBloqueio.preUsuario[0], senhaFinanceiro);
+
+            headerPage.abrirEscritorioHeader();
             escritorioPage.clicarAbaDadosDoEscritorio();
             escritorioPage.clicarAbaFinanceiro();
             escritorioPage.ativarInadimplencia(dataInadimplencia);
@@ -58,9 +72,10 @@ describe("Marcar inadimplente, verificar mensagem de aviso, agendar bloqueio e v
         });
 
         it("Logar com o usuário e verificar mensagem de aviso de inadimplência", () => {
-            const senhaGerada = Cypress.env('senhaGerada');
+            const nomeUsuario = inadimplenteBloqueio.preUsuario[1].nome;
+            const senhaInadimplente = Cypress.env(`senhaGerada${nomeUsuario}`);
 
-            cy.primeiroLogin(inadimplenteBloqueio.usuario, senhaGerada);
+            cy.primeiroLogin(inadimplenteBloqueio.preUsuario[1], senhaInadimplente);
 
             swalPage.getMensagem().should("contain.text", "O escritório encontra-se em inadimplência e será bloqueado em 5 dias.");
             swalPage.clicarOk();
@@ -70,21 +85,16 @@ describe("Marcar inadimplente, verificar mensagem de aviso, agendar bloqueio e v
 
         it("Agendar bloqueio do escritório", () => {
             const dataBloqueio = escritorioPage.setDataInadimplenciaBloqueioDias(0); //DIA ATUAL
-
             cy.login(usuarios.sistema.email, usuarios.sistema.senha);
-
-            headerPage.selecionarEscritorio(inadimplenteBloqueio.escritorio.cnpj);
             headerPage.abrirEscritorioHeader();
-
             escritorioPage.clicarAbaAgendarBloqueio();
             escritorioPage.agendarBloqueio(dataBloqueio);
             toaster.verificaMensagemDoToaster("Alterado com sucesso");
-
             cy.logout();
         });
 
         it("Tentar logar com usuário do escritório que foi bloqueado -> NÃO DEVE LOGAR", () => {
-            cy.login(inadimplenteBloqueio.usuario.email, inadimplenteBloqueio.usuario.senha);
+            cy.login(inadimplenteBloqueio.preUsuario[1].email, inadimplenteBloqueio.preUsuario[1].senha);
             toaster.verificaMensagemDoToaster("Seu plano não está mais vigente. Entre em contato com o comercial.");
         });
     });

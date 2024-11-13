@@ -79,13 +79,9 @@ describe("Testes para Grupo de Empresas", () => {
             cy.wait(600);
             escritorioPage.getSenhaGerada().then(($text) => {
                 const senhaGerada = $text
-
                 //TENTAR LOGAR COM A EMPRESA COM A SENHA NOVA
                 cy.logout();
                 cy.primeiroLogin(escritorio.preUsuarios[0], senhaGerada);
-                // cy.logout();
-                // cy.login(escritorio.preUsuarios[0].email, escritorio.preUsuarios[0].senha);
-
             });
 
             headerPage.verificarEscritorio(escritorio.escritorioGrupoEmpresaInativo);
