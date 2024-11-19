@@ -1,4 +1,4 @@
-import { MenuLateralPage, PeriodoPage, TablePage } from "../";
+import { MenuLateralPage, PeriodoPage, SwalPage, TablePage } from "../";
 import { dadosFaturamento } from "../../fixtures"
 
 //MODAL
@@ -191,7 +191,7 @@ interface IEmpresaCertificado {
     razaoSocial: string,
     nomeFantasia: string,
     uf: string,
-    municipio: string, 
+    municipio: string,
     telefone: string,
     email: string,
     atividadePrincipalCodigo: string,
@@ -217,6 +217,34 @@ export default class EmpresaPage {
 
     private periodoPage = new PeriodoPage();
     private tablePage = new TablePage();
+    private swalPage = new SwalPage();
+
+
+    validarMensagensDadosDoEcac = (diaParaTransmitir: number, diaParaEnviarEmail: number) => {
+        var date = new Date();
+        let diaHoje = date.getDate();
+
+        if (diaHoje > diaParaTransmitir && diaHoje > diaParaEnviarEmail) {
+            this.swalPage.getMensagem().invoke("text").then(($text) => {
+                expect($text.replace(/\u00a0/g, ' ').trim()).to.eq("Os dias informado nos campos [Dia para transmitir a apuração] e [Dia para envio ao cliente] são menores que o da data atual. O procedimento só será realizado no próximo mês.");
+            });
+            this.swalPage.clicarOk();
+
+        } else if (diaHoje > diaParaTransmitir) {
+            this.swalPage.getMensagem().invoke("text").then(($text) => {
+                expect($text.replace(/\u00a0/g, ' ').trim()).to.eq("O dia informado no campo [Dia para transmitir a apuração] é menor que o da data atual. O procedimento só será realizado no próximo mês.");
+            });
+            this.swalPage.clicarOk();
+
+        } else if (diaHoje > diaParaEnviarEmail) {
+            this.swalPage.getMensagem().invoke("text").then(($text) => {
+                expect($text.replace(/\u00a0/g, ' ').trim()).to.eq("O dia informada no campo [Dia para enviar a apuração] é menor que o da data atual. O procedimento só será realizado no próximo mês.");
+            });
+            this.swalPage.clicarOk();
+        }
+    };
+
+
 
     cadastrarEmpresa(cnpj: string, escritorio: string) {
         cy.intercept("POST", "**/cadastrar-empresa").as("cadastrarEmpresa");
@@ -233,7 +261,7 @@ export default class EmpresaPage {
         cy.wait("@cadastrarEmpresa");
     }
 
-    checkOsValoresDaDeclaracao(declaracao: IDadosDeclaracao){
+    checkOsValoresDaDeclaracao(declaracao: IDadosDeclaracao) {
         this.tablePage.getItemDaGrade(declaracao.periodo).find("td").eq(0).invoke("text").then(($texto: string) => {
             const textoFormatado = $texto.replace(/\u00a0/g, ' ').trim();
             expect(textoFormatado).to.eq(declaracao.periodo);
@@ -249,9 +277,9 @@ export default class EmpresaPage {
             expect(textoFormatado).to.eq(declaracao.valorTotal);
         });
     }
-    
 
-    cadastrarEmpresaPorExcel(caminhoDoCertificado: string){
+
+    cadastrarEmpresaPorExcel(caminhoDoCertificado: string) {
         cy.intercept("POST", "**/upload/CadastrarEmpresaPorExcel").as("uploadExcel");
         this.clicarNovaEmpresa();
         this.clicarAbaCadastrarPorExcel();
@@ -262,15 +290,15 @@ export default class EmpresaPage {
 
     importarEmpresasAbaCadastrarPorExcel(arquivo: string) {
         cy.fixture(arquivo, "base64").then((data) => {
-          cy.get(importarExcelButtonAbaCadastrarPorExcel).attachFile({
-            filePath: arquivo,
-            fileContent: data,
-            fileName: arquivo,
-            encoding: "base64",
-            mimeType: "application/octet-stream",
-          });
+            cy.get(importarExcelButtonAbaCadastrarPorExcel).attachFile({
+                filePath: arquivo,
+                fileContent: data,
+                fileName: arquivo,
+                encoding: "base64",
+                mimeType: "application/octet-stream",
+            });
         });
-      }
+    }
 
 
     cadastrarEmpresaPorCertificado(caminhoDoCertificado: string) {
@@ -328,27 +356,27 @@ export default class EmpresaPage {
         cy.wait(300); // aguarda modal fechar
     }
 
-    //   selecionarAnexoDeCfopAbaConfiguracaoDeAnexo(texto) {
-    //     cy.get(selectAnexoDeCFOPAbaConfiguracaoDeAnexo)
-    //       .filter((index, element) => {
-    //         return element.textContent.trim() === "Anexo";
-    //       })
-    //       .first().click()
-    //       .wait(200); // aguarda abrir dropdown
+      selecionarAnexoDeCfopAbaConfiguracaoDeAnexo(texto) {
+        cy.get(selectAnexoDeCFOPAbaConfiguracaoDeAnexo)
+          .filter((index, element) => {
+            return element.textContent?.trim() === "Anexo";
+          })
+          .first().click()
+          .wait(200); // aguarda abrir dropdown
 
-    //     cy.get(menuSelectAnexoDeCFOPAbaConfiguracaoDeAnexo).contains(texto).click();
-    //   }
+        cy.get(menuSelectAnexoDeCFOPAbaConfiguracaoDeAnexo).contains(texto).click();
+      }
 
-    //   selecionarAnexoDeServicoAbaConfiguracaoDeAnexo(texto) {
-    //     cy.get(selectAnexoDeServicoAbaConfiguracaoDeAnexo)
-    //       .filter((index, element) => {
-    //         return element.textContent.trim() === "Anexo";
-    //       })
-    //       .last().click()
-    //       .wait(200); // aguarda abrir dropdown
+      selecionarAnexoDeServicoAbaConfiguracaoDeAnexo(texto) {
+        cy.get(selectAnexoDeServicoAbaConfiguracaoDeAnexo)
+          .filter((index, element) => {
+            return element.textContent?.trim() === "Anexo";
+          })
+          .last().click()
+          .wait(200); // aguarda abrir dropdown
 
-    //     cy.get(menuSelectAnexoDeServicoAbaConfiguracaoDeAnexo).contains(texto).click();
-    //   }
+        cy.get(menuSelectAnexoDeServicoAbaConfiguracaoDeAnexo).contains(texto).click();
+      }
 
     selecionarEscritorioModal(escritorio: string) {
         cy.wait(300);
@@ -528,17 +556,17 @@ export default class EmpresaPage {
             .clearThenType(text);
     }
 
-      importarCertificadoAbaCadastrarPorCertificado(arquivo: string) {
+    importarCertificadoAbaCadastrarPorCertificado(arquivo: string) {
         cy.fixture(arquivo, "base64").then((data) => {
-          cy.get(importarCertificadoButtonAbaCadastrarPorCertificado).attachFile({
-            filePath: arquivo,
-            fileContent: data,
-            fileName: arquivo,
-            encoding: "base64",
-            mimeType: "application/octet-stream",
-          });
+            cy.get(importarCertificadoButtonAbaCadastrarPorCertificado).attachFile({
+                filePath: arquivo,
+                fileContent: data,
+                fileName: arquivo,
+                encoding: "base64",
+                mimeType: "application/octet-stream",
+            });
         });
-      }
+    }
 
     //   importarEmpresasAbaCadastrarPorExcel(arquivo) {
     //     cy.fixture(arquivo, "base64").then((data) => {
@@ -1046,7 +1074,7 @@ export default class EmpresaPage {
         });
     }
 
-    verificarDadosContabilista(texto: string, contador: string) {
+    verificarDadosContabilista(texto: string, contador?: string) {
         if (!contador) {
             cy.get(itensGradeModalEmpresa).each(element => {
                 if (Cypress.$(element).text().includes(texto)) {

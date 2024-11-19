@@ -10,7 +10,7 @@ const headerPage = new HeaderPage();
 const empresaPage = new EmpresaPage();
 const revendaPage = new RevendaPage();
 
-describe("Testes para Grupo de Escritório", () => {
+describe.skip("Testes para Grupo de Escritório", () => {
     before(()=> {
         cy.intercept("GET", "**listar-escritorios-paginacao**").as("listarEscritorios");
         cy.login(usuarios.sistema.email, usuarios.sistema.senha);

@@ -1,0 +1,50 @@
+{
+    "escritorio": {
+        "cnpj": "12.934.346/0001-46",
+        "razaoSocial": "UBERCONTA UBERABA CONTABILIDADE LTDA",
+        "nomeFantasia": "UBERCONTA",
+        "uf": "MG",
+        "municipio": "UBERABA",
+        "telefone": "(34) 33125-900",
+        "email": "uberconta@uberconta.com.br",
+        "revendaApelido": "Naruto Uzumaki"
+    },
+    "escritorioSittax": {
+        "cnpj": "37.411.535/0001-65"
+    },
+    "empresa": {
+        "cnpj": "38.259.890/0001-23",
+        "razaoSocial": "PETS NEWS LTDA",
+        "escritorio": "UBERCONTA UBERABA CONTABILIDADE LTDA"
+    },
+    "usuario": {
+        "nome": "Plano",
+        "sobrenome": "Teste",
+        "email": "planoteste@a.com",
+        "telefone": "33333333333",
+        "perfilDeAcesso": "ADMINISTRADOR DO ESCRITORIO",
+        "senha": "@Sittax#"
+    },
+    "periodoApuracao": {
+        "mes": "Agosto",
+        "ano": "2023"
+    },
+    "valorApuracao": {
+        "valorProduto": "R$ 0,00"
+    },
+    "preRevenda": {
+        "cnpj": "17.430.688/0001-42",
+        "razaoSocial": "POLYTUBOS DISTRIBUIDORA DE TUBOS LTDA",
+        "nomeFantasia": "POLYTUBOS DISTRIBUIDORA DE TUBOS",
+        "email": "rogeriocunha@polytubospvc.com.br",
+        "telefone": "(31) 9817-2871",
+        "uf": "MG",
+        "apelido": "Naruto Uzumaki",
+        "itemUFS": [
+            "RO",
+            "AM"
+        ],
+        "keyApiSerpro": "dhasd743h3r32!",
+        "secretApiSerpro": "hgdj223jf"
+    }
+}

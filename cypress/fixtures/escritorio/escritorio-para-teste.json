@@ -1,0 +1,32 @@
+{
+    "cnpj":"23.903.851/0001-40",
+    "email": "teste@dev.com",
+    "titulosCheckboxEmail": ["DAS","EXTRATO","FATURAMENTO","CERTIDÕES","CONFERÊNCIA","CONFERÊNCIA DIFAL","QUEBRA DE SEQUÊNCIA","GUIA DIFAL"    ],
+    "revendaApelido": "SETUP",
+    "preRevenda": {
+        "cnpj": "18.903.291/0001-93",
+        "razaoSocial": "MARTA HELENA DE OLIVEIRA 04647669823",
+        "nomeFantasia": "MARTA HELENA DE OLIVEIRA 04647669823",
+        "email": "maria@test.com",
+        "telefone": "(16) 9225-6183",
+        "uf": "SP",
+        "apelido": "Kakashi Hatake",
+        "itemUFS": [
+          "RO",
+          "AM"
+        ],
+        "keyApiSerpro": "dhasd743h3r32!",
+        "secretApiSerpro": "hgdj223jf"
+      },
+      "preEscritorio": {
+        "cnpj": "23.903.851/0001-40",
+        "razaoSocial": "SELMA APARECIDA DE LIMA 36364876803",
+        "nomeFantasia": "CONTFACILE",
+        "uf": "MG",
+        "municipio": "SÃO JOSÉ DOS CAMPOS",
+        "telefone": "(12) 88829-013",
+        "email": "135458selima@gmail.com",
+        "revendaApelido": "Kakashi Hatake"
+      }
+}
+

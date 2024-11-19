@@ -14,6 +14,9 @@ export { default as NotasFiscaisSaidaPage } from './notas-saida-entrada/notas-fi
 export { default as ImportacaoPage } from './importacao/importacao-page';
 export { default as ContadorPage } from './contador/contador-page';
 export { default as SocioPage } from './socio/socio-page';
+export { default as PlanoPage } from './plano-page/plano-page';
+export { default as ApuracaoPage } from './apuração/apuracao-page';
+
 
 
 

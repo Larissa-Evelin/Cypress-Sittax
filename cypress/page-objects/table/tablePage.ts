@@ -16,13 +16,13 @@ export default class TablePage {
     cy.get("app-tabela-padrao-paginada button i").should("be.visible").click();
   }
 
-  selecionarTodosItensDaGrade(tabela) {
+  selecionarTodosItensDaGrade(tabela: string) {
     cy.get(tabela).within(() => {
       cy.get(checkboxDosItensDaGrade).click({ multiple: true });
     });   
   }
   
-  selecionarItemDaGrade(texto, tela) {
+  selecionarItemDaGrade(texto: string, tela: string) {
     if (tela) {
       cy.get(tela)
       .contains(linha, texto)
@@ -39,7 +39,7 @@ export default class TablePage {
       .click();
   }
 
-  selecionarBulkAction(texto, idBulkAction) {
+  selecionarBulkAction(texto: string, idBulkAction?: string) {
     if (idBulkAction) {
       return cy.get(idBulkAction + " " + bulkActionSelect).last().select(texto);
     }
@@ -47,7 +47,7 @@ export default class TablePage {
     cy.get(bulkActionSelect).last().select(texto);
   }
 
-  digitarQtdItensDeveSerMostradoNaGrade(texto) {
+  digitarQtdItensDeveSerMostradoNaGrade(texto: string) {
     cy.intercept("GET", "*paginacao*").as("paginacao");
     
     cy.get(qtdItensDeveSerMostradoNaGrade)
@@ -60,7 +60,7 @@ export default class TablePage {
     cy.wait("@paginacao");
   }
 
-  digitarQtdItensDeveSerMostradoNaGradeSemRequisicao(valorQtd) {
+  digitarQtdItensDeveSerMostradoNaGradeSemRequisicao(valorQtd: number) {
     cy.get(qtdItensDeveSerMostradoNaGrade)
       .first()
       .scrollIntoView()

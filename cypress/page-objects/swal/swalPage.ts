@@ -6,6 +6,7 @@ const mensagem = "div[id='swal2-html-container']";
 
 export default class SwalPage {
   clicarOk() {
+    cy.wait(600);
     cy.get(okButton).should("be.visible").contains(/Ok/i).click();
   }
 

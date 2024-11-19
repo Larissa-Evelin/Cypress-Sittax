@@ -42,7 +42,7 @@ export default class ContadorPage {
         });
     }
 
-    verificarContadorFoiCadastrado(contador) {
+    verificarContadorFoiCadastrado(contador: IContador) {
         cy.get("app-tabela-padrao-paginada:visible tbody tr")
             .should("contain", contador.nome)
             .and("contain", contador.CPF);
@@ -55,7 +55,7 @@ export default class ContadorPage {
             .click();
     }
 
-    verificarContadorFoiExcluido(contador) {
+    verificarContadorFoiExcluido(contador: IContador) {
         cy.get("app-tabela-padrao-paginada:visible tbody tr")
             .should("not.contain", contador.nome)
             .and("not.contain", contador.CPF);

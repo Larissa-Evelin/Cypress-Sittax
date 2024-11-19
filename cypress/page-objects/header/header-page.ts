@@ -43,10 +43,10 @@ export default class HeaderPage {
   }
 
   abrirEscritorioHeader(dadosModalEscritorio?: string) {
-    cy.get(iconeEscritorio).should("be.visible").click();
+    cy.get(iconeEscritorio).first().should("be.visible").click();
 
     if(dadosModalEscritorio) {
-      cy.get(modalEscritorio).should("contain.text", dadosModalEscritorio);
+      cy.get(modalEscritorio).first().should("contain.text", dadosModalEscritorio);
     }
   }
 

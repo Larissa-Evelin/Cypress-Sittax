@@ -99,6 +99,11 @@ export default class EscritorioPage {
     this.clicarFechar();
   }
 
+  pesquisarEscritorioEAbrirModal(escritorio: IEscritorio){
+      this.digitarPesquisarField(escritorio.cnpj);
+      this.getTable().contains("td", escritorio.cnpj).dblclick();
+};
+
   clicarAbaEscritoriosDeGrupo() {
     cy.contains("app-escritorio:visible a", "Escritórios de grupo").click();
     cy.wait(300); //ESPERAR TABELA CARREGAR
@@ -180,7 +185,7 @@ export default class EscritorioPage {
   }
 
   clicarFecharBotao() {
-    cy.wait(300); // aguardar modal carregar
+    cy.wait(600); // aguardar modal carregar
     cy.get(this.fecharButton)
       .should('be.visible')
       .contains('Fechar')
@@ -414,11 +419,11 @@ export default class EscritorioPage {
     cy.get(this.abaReplicacoes).contains('Replicações').click();
   }
 
-  digitarNoInputGrupoDeEscritorios(texto, placeholder) {
+  digitarNoInputGrupoDeEscritorios(texto: string, placeholder: string) {
     cy.get(this.modalGrupoDeEscritorios + `input[placeholder='${placeholder}']:visible`).click().type(texto);
   }
 
-  digitarNoInputGrupoDeEmpresas(texto, placeholder) {
+  digitarNoInputGrupoDeEmpresas(texto: string, placeholder: string) {
     cy.get(this.modalGrupoDeEmpresas + `input[placeholder='${placeholder}']:visible`).click().clearThenType(texto);
   }
 

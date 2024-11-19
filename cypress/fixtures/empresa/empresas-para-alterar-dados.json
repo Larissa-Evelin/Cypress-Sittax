@@ -1,0 +1,170 @@
+{
+  "empresas": [
+    {
+      "cnpj": "37.164.234/0001-84",
+      "razaoSocial": "GREEN CAR CONSULTORIA FINANCEIRA LTDA",
+      "cadastrarPorCertificado": false,
+      "procuracaoDoEscritorio": true,
+      "escritorio": "SELMA APARECIDA DE LIMA 36364876803",
+      "caminhoDoCertificado": "",
+      "dadosQueDevemSerAlterados": {
+        "nomeFantasia": "Nome Fantasia",
+        "email": "email@hotmail.com",
+        "inscricaoEstadual": "12.345.678-9",
+        "inscricaoMunicipal": "987654321",
+        "telefone": "62999999999",
+        "usuarioPrefeitura": "usuario1",
+        "senhaPrefeitura": "senha1",
+        "diaParaCalcular": "9",
+        "diaParaTransmitir": "10",
+        "diaParaEnviarEmail": "11",
+        "valorFixoIcms": "19",
+        "valorFixoIss": "5",
+        "codigosDeServico": ["2222", "4444", "4563", "123123"],
+        "anexoDeCfop": [
+          {
+            "anexo": "Anexo 1 – Comércio",
+            "cfops": ["5102", "6102"]
+          },
+          {
+            "anexo": "Anexo 2 – Indústria",
+            "cfops": ["5101", "6101"]
+          },
+          {
+            "anexo": "Anexo 3 Com Fator R – Prestadores de Serviço",
+            "cfops": ["5933", "6933"]
+          },
+          {
+            "anexo": "Anexo 4 – Prestadores de Serviço",
+            "cfops": ["4444", "4321"]
+          },
+          {
+            "anexo": "Anexo 5 Com Fator R – Prestadores de Serviço",
+            "cfops": ["5555", "5678"]
+          }
+        ],
+        "anexoDeServico": [
+          {
+            "anexo": "Anexo 3 Com Fator R – Prestadores de Serviço",
+            "codigosDeServico": ["333333", "313131"]
+          },
+          {
+            "anexo": "Anexo 3 Sem Fator R – Prestadores de Serviço",
+            "codigosDeServico": ["333333", "313131"]
+          },
+          {
+            "anexo": "Anexo 4 – Prestadores de Serviço",
+            "codigosDeServico": ["444444", "414141"]
+          },
+          {
+            "anexo": "Anexo 5 Com Fator R – Prestadores de Serviço",
+            "codigosDeServico": ["555555", "515151"]
+          },
+          {
+            "anexo": "Anexo 5 Sem Fator R – Prestadores de Serviço",
+            "codigosDeServico": ["555555", "515151"]
+          }
+        ]
+      }
+    },
+    {
+      "cnpj": "37.411.535/0001-65",
+      "escritorio": "SELMA APARECIDA DE LIMA 36364876803",
+      "razaoSocial": "SITTAX SISTEMA DE INTELIGENCIA TRIBUTARIA LTDA",
+      "cadastrarPorCertificado": true,
+      "procuracaoDoEscritorio": false,
+      "caminhoDoCertificado": "/arquivos/certificados/SITTAX_LTDA_37411535000165_ValidoAte_04102024_senhaSittax@123.pfx",
+      "dadosQueDevemSerAlterados": {
+        "nomeFantasia": "Nome Fantasia",
+        "email": "email@hotmail.com",
+        "emailApuracao": "victorbrenno.lacerda@gmail.com",
+        "segundoEmailApuracao": "segundoemail@hotmail.com",
+        "inscricaoEstadual": "10.250.149-1",
+        "inscricaoMunicipal": "987654321",
+        "telefone": "62999999999",
+        "usuarioPrefeitura": "usuario1",
+        "senhaPrefeitura": "senha1",
+        "diaParaCalcular": "9",
+        "diaParaTransmitir": "10",
+        "diaParaEnviarEmail": "11",
+        "valorFixoIcms": "19",
+        "valorFixoIss": "5",
+        "valorFixoAliquota": "3",
+        "codigosDeServico": ["2222", "4444", "4563", "123123"],
+        "anexoDeCfop": [
+          {
+            "anexo": "Anexo 1 – Comércio",
+            "cfops": ["5102", "6102"]
+          },
+          {
+            "anexo": "Anexo 2 – Indústria",
+            "cfops": ["5101", "6101"]
+          },
+          {
+            "anexo": "Anexo 3 Com Fator R – Prestadores de Serviço",
+            "cfops": ["5933", "6933"]
+          },
+          {
+            "anexo": "Anexo 4 – Prestadores de Serviço",
+            "cfops": ["4444", "4321"]
+          },
+          {
+            "anexo": "Anexo 5 Com Fator R – Prestadores de Serviço",
+            "cfops": ["5555", "5678"]
+          }
+        ],
+        "anexoDeServico": [
+          {
+            "anexo": "Anexo 3 Com Fator R – Prestadores de Serviço",
+            "codigosDeServico": ["333333", "313131"]
+          },
+          {
+            "anexo": "Anexo 4 – Prestadores de Serviço",
+            "codigosDeServico": ["444444", "414141"]
+          },
+          {
+            "anexo": "Anexo 5 Com Fator R – Prestadores de Serviço",
+            "codigosDeServico": ["555555", "515151"]
+          }
+        ]
+      }
+    }
+  ],
+  "preRevenda": {
+    "cnpj": "17.430.688/0001-42",
+    "razaoSocial": "POLYTUBOS DISTRIBUIDORA DE TUBOS LTDA",
+    "nomeFantasia": "POLYTUBOS DISTRIBUIDORA DE TUBOS",
+    "email": "rogeriocunha@polytubospvc.com.br",
+    "telefone": "(31) 9817-2871",
+    "uf": "MG",
+    "apelido": "Naruto Uzumaki",
+    "itemUFS": ["RO", "AM"],
+    "keyApiSerpro": "dhasd743h3r32!",
+    "secretApiSerpro": "hgdj223jf"
+  },
+  "preEscritorio": {
+    "cnpj": "23.903.851/0001-40",
+    "razaoSocial": "SELMA APARECIDA DE LIMA 36364876803",
+    "nomeFantasia": "CONTFACILE",
+    "uf": "MG",
+    "municipio": "SÃO JOSÉ DOS CAMPOS",
+    "telefone": "(12) 88829-013",
+    "email": "135458selima@gmail.com",
+    "revendaApelido": "Naruto Uzumaki"
+  },
+  "preContador": {
+    "escritorioCnpj": "37.411.535/0001-65",
+    "nome": "Contador Teste",
+    "CPF": "123.410.420-23",
+    "CRC": "3SP111111O3",
+    "endereco": {
+      "logradouro": "Lograteste",
+      "bairro": "bairroteste",
+      "numero": "2233",
+      "complemento": "complementoteste",
+      "cep": "51.322-578"
+    },
+    "telefone": "11111111111",
+    "email": "contadorteste@teste.com"
+  }
+}

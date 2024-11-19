@@ -14,3 +14,7 @@ export { default as escritorioGrupoEmpresa } from './escritorio/escritorio-cadas
 export { default as escritorioGrupoEscritorio } from './escritorio/escritorio-cadastrar-grupo-escritorio.json';
 export { default as inadimplenteBloqueio } from './escritorio/inadimplente-bloqueio.json';
 export { default as escritorioInativar } from './escritorio/escritorio-inativar.json';
+export { default as dadosParaReplicacao } from './escritorio/dados-para-replicacao.json';
+export { default as escritorioPlanos } from './escritorio/escritorio-planos.json';
+export { default as escritorioParaTeste } from './escritorio/escritorio-para-teste.json';
+export { default as empresasParaAlterarDados } from './empresa/empresas-para-alterar-dados.json';
