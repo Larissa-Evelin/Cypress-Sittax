@@ -46,6 +46,7 @@ Cypress.Commands.add("logout", () => {
 });
 
 Cypress.Commands.add("primeiroLogin", (usuario: IUsuario, senhaGerada: string) => {
+
   cy.login(usuario.email, senhaGerada);
 
   //TROCAR SENHA DO PRIMEIRO ACESSO

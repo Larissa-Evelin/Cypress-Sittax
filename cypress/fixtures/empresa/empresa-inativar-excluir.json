@@ -1,0 +1,84 @@
+
+{
+    "empresas": [
+        {
+            "cnpj": "38.259.890/0001-23",
+            "escritorio": "SELMA APARECIDA DE LIMA 36364876803",
+            "razaoSocial": "PETS NEWS LTDA",
+            "nomeFantasia": "PETS NEWS",
+            "uf": "SP",
+            "municipio": "GUARULHOS",
+            "telefone": "(11) 24666-189",
+            "email": "genesis@genesiscontabilidade.net"
+        },
+        {
+            "cnpj": "00.759.533/0001-51",
+            "escritorio": "SELMA APARECIDA DE LIMA 36364876803",
+            "razaoSocial": "COMERCIAL VALUTI EIRELI",
+            "nomeFantasia": "",
+            "uf": "SP",
+            "municipio": "SÃO JOSÉ DOS CAMPOS",
+            "telefone": "(12) 39399-169",
+            "email": "lucasveloso@valuti.com.br"
+        },
+        {
+            "cnpj": "37.411.535/0001-65",
+            "escritorio": "AMANDA CRISTINA COSTA CASTRO BUENO 02389922252",
+            "razaoSocial": "SITTAX SISTEMA DE INTELIGENCIA TRIBUTARIA LTDA",
+            "nomeFantasia": "Nome Fantasia",
+            "uf": "GO",
+            "municipio": "GOIANIA",
+            "telefone": "(62) 81178-504",
+            "email": "victorbrenno.lacerda@gmail.com"
+        }
+    ],
+    "preLogin": {
+        "email": "lobe.admescritorio@setup.com.br",
+        "senha": "@Sittax#"
+    },
+    "preCadastroUsuario": {
+        "nome": "UberUser",
+        "sobrenome": "Adm Escritorio",
+        "email": "lobe.admescritorio@setup.com.br",
+        "telefone": "22222222222",
+        "perfilDeAcesso": "ADMINISTRADOR DO ESCRITORIO",
+        "senha": "@Sittax#"
+    },
+    "preRevenda": {
+        "cnpj": "39.648.579/0001-39",
+        "razaoSocial": "COMMODARE SOLUCOES FINANCEIRAS LTDA",
+        "nomeFantasia": "COMMODARE SOLUCOES FINANCEIRAS",
+        "email": "filipe.varela@live.com",
+        "telefone": "(84) 9406-8818",
+        "uf": "RN",
+        "apelido": "Naruto Uzumaki",
+        "itemUFS": [
+            "RO",
+            "AM"
+        ],
+        "keyApiSerpro": "dhasd743h3r32!",
+        "secretApiSerpro": "hgdj223jf"
+    },
+    "preEscritorio": [
+        {
+            "cnpj": "23.903.851/0001-40",
+            "razaoSocial": "SELMA APARECIDA DE LIMA 36364876803",
+            "nomeFantasia": "CONTFACILE",
+            "uf": "MG",
+            "municipio": "SÃO JOSÉ DOS CAMPOS",
+            "telefone": "(12) 88829-013",
+            "email": "135458selima@gmail.com",
+            "revendaApelido": "Naruto Uzumaki"
+        },
+        {
+            "cnpj": "48.791.721/0001-93",
+            "razaoSocial": "AMANDA CRISTINA COSTA CASTRO BUENO 02389922252",
+            "nomeFantasia": "CONTFACILE",
+            "uf": "PA",
+            "municipio": "ULIANÓPOLIS",
+            "telefone": "(91) 82659-755",
+            "email": "paulohc793@gmail.com",
+            "revendaApelido": "Naruto Uzumaki"
+        }
+    ]
+}

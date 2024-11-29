@@ -18,3 +18,7 @@ export { default as dadosParaReplicacao } from './escritorio/dados-para-replicac
 export { default as escritorioPlanos } from './escritorio/escritorio-planos.json';
 export { default as escritorioParaTeste } from './escritorio/escritorio-para-teste.json';
 export { default as empresasParaAlterarDados } from './empresa/empresas-para-alterar-dados.json';
+export { default as empresasInativarExcluir } from './empresa/empresa-inativar-excluir.json';
+export { default as empresaParaCadastrarFatorR } from './empresa/empresa-para-cadastrar-fator-r.json';
+export { default as empresaParaFaturamento } from './empresa/empresa-para-faturamento.json';
+

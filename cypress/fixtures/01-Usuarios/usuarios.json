@@ -10,5 +10,9 @@
     "revendaSittax": {
         "email": "revenda@sittax.com.br",
         "senha": "@Sittax#"
+    },
+    "lobeAdmEscritorio": {
+        "email": "lobe.admescritorio@setup.com.br",
+        "senha": "@Sittax#"
     }
 }

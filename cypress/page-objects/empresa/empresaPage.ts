@@ -246,7 +246,7 @@ export default class EmpresaPage {
 
 
 
-    cadastrarEmpresa(cnpj: string, escritorio: string) {
+    cadastrarEmpresa(cnpj: string, escritorio?: string) {
         cy.intercept("POST", "**/cadastrar-empresa").as("cadastrarEmpresa");
 
         this.clicarNovaEmpresa();
