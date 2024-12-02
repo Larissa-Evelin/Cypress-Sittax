@@ -199,7 +199,7 @@ interface IEmpresaCertificado {
     regimeTributario: string,
     inscricaoEstadual: string,
     dataAbertura: string,
-    caminhoDoArquivo: string
+    // caminhoDoArquivo: string
 }
 
 interface IData {

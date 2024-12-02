@@ -1,0 +1,39 @@
+{
+    "cnpj": "36.117.761/0001-75",
+    "razaoSocial": "DROGARIA EL SHADAY A H LTDA",
+    "nomeFantasia": "DROGARIA EL SHADAY",
+    "uf": "GO",
+    "municipio": "ALTO HORIZONTE",
+    "telefone":"(12) 88829-013",
+    "email": "135458selima@gmail.com",
+    "atividadePrincipalCodigo": "4771701",
+    "atividadePrincipalDescricao": "Comércio varejista de produtos farmacêuticos, sem manipulação de fórmulas",
+    "regimeTributario": "Simples Nacional",
+    "inscricaoEstadual": "10.787.762-7",
+    "dataAbertura": "23/01/2020",
+    "preRevenda": {
+        "cnpj": "39.648.579/0001-39",
+        "razaoSocial": "COMMODARE SOLUCOES FINANCEIRAS LTDA",
+        "nomeFantasia": "COMMODARE SOLUCOES FINANCEIRAS",
+        "email": "filipe.varela@live.com",
+        "telefone": "(84) 9406-8818",
+        "uf": "RN",
+        "apelido": "Naruto Uzumaki",
+        "itemUFS": [
+            "RO",
+            "AM"
+        ],
+        "keyApiSerpro": "dhasd743h3r32!",
+        "secretApiSerpro": "hgdj223jf"
+    },
+    "preEscritorio": {
+        "cnpj": "23.903.851/0001-40",
+        "razaoSocial": "SELMA APARECIDA DE LIMA 36364876803",
+        "nomeFantasia": "CONTFACILE",
+        "uf": "MG",
+        "municipio": "SÃO JOSÉ DOS CAMPOS",
+        "telefone": "(12) 88829-013",
+        "email": "135458selima@gmail.com",
+        "revendaApelido": "Naruto Uzumaki"
+    }
+}

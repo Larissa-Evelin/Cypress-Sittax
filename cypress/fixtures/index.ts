@@ -21,4 +21,5 @@ export { default as empresasParaAlterarDados } from './empresa/empresas-para-alt
 export { default as empresasInativarExcluir } from './empresa/empresa-inativar-excluir.json';
 export { default as empresaParaCadastrarFatorR } from './empresa/empresa-para-cadastrar-fator-r.json';
 export { default as empresaParaFaturamento } from './empresa/empresa-para-faturamento.json';
+export { default as empresasParaConsultarCNPJ } from './empresa/empresas-para-consultar-cnpj.json';
 
