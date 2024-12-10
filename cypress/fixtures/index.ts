@@ -22,4 +22,7 @@ export { default as empresasInativarExcluir } from './empresa/empresa-inativar-e
 export { default as empresaParaCadastrarFatorR } from './empresa/empresa-para-cadastrar-fator-r.json';
 export { default as empresaParaFaturamento } from './empresa/empresa-para-faturamento.json';
 export { default as empresasParaConsultarCNPJ } from './empresa/empresas-para-consultar-cnpj.json';
+export { default as sugestaoTipoNotaImportada } from './empresa/sugestao-tipo-nota-importada.json'
+export { default as sugestaoTipoNota } from './empresa/sugestao-tipo-nota.json'
+export { default as empresasParaCadastrarPorCNPJ } from './empresa/empresas-para-cadastrar-por-cnpj.json'
 

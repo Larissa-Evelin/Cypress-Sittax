@@ -1,0 +1,45 @@
+{
+    "cnpj": "52.087.022/0001-34",
+    "escritorio": "SELMA APARECIDA DE LIMA 36364876803",
+    "razaoSocial": "IMPERIO NORTE PORANGATU LTDA",
+    "nomeFantasia": "IMPERIO NORTE PORANGATU LTDA",
+    "uf": "GO",
+    "municipio": "PORANGATU",
+    "telefone": "(62) 84262-926",
+    "email": "",
+    "preRevenda": {
+        "cnpj": "39.648.579/0001-39",
+        "razaoSocial": "COMMODARE SOLUCOES FINANCEIRAS LTDA",
+        "nomeFantasia": "COMMODARE SOLUCOES FINANCEIRAS",
+        "email": "filipe.varela@live.com",
+        "telefone": "(84) 9406-8818",
+        "uf": "RN",
+        "apelido": "Naruto Uzumaki",
+        "itemUFS": [
+            "RO",
+            "AM"
+        ],
+        "keyApiSerpro": "dhasd743h3r32!",
+        "secretApiSerpro": "hgdj223jf"
+    },
+    "preEscritorio": {
+        "cnpj": "23.903.851/0001-40",
+        "razaoSocial": "SELMA APARECIDA DE LIMA 36364876803",
+        "nomeFantasia": "CONTFACILE",
+        "uf": "MG",
+        "municipio": "SÃO JOSÉ DOS CAMPOS",
+        "telefone": "(12) 88829-013",
+        "email": "135458selima@gmail.com",
+        "revendaApelido": "Naruto Uzumaki"
+    },
+    "preEmpresa": {
+        "cnpj": "52.087.022/0001-34",
+        "escritorio": "SELMA APARECIDA DE LIMA 36364876803",
+        "razaoSocial": "IMPERIO NORTE PORANGATU LTDA",
+        "nomeFantasia": "CRIA FOOD",
+        "uf": "GO",
+        "municipio": "PORANGATU",
+        "telefone": "(62) 84262-926",
+        "email": ""
+    }
+}

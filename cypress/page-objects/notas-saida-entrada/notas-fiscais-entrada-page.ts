@@ -20,13 +20,13 @@ export default class NotasFiscaisEntradaPage {
     cy.get(tipoDeNotaDentroDaNota).last().type("{enter}");
   }
 
-  selecionarData(ano, mes, dia) {
+  selecionarData(ano: string, mes: string, dia: string) {
     cy.get(alterarDataField).should('be.visible').click();
 
     new PeriodoComponent().selecionarData(ano, mes, dia);
   }
 
-  selecionarDataDentroDaNota(ano, mes, dia) {
+  selecionarDataDentroDaNota(ano: string, mes: string, dia: string) {
     cy.get(dataDeEntradaDentroDaNota).should('be.visible').click();
 
     new PeriodoComponent().selecionarData(ano, mes, dia);
@@ -40,7 +40,7 @@ export default class NotasFiscaisEntradaPage {
     return cy.get(dataDeEntradaDentroDaNota).should('be.visible');
   }
 
-  selecionarTipoDeNotaDentroDaNota(texto) {
+  selecionarTipoDeNotaDentroDaNota(texto: string) {
     return cy.get(tipoDeNotaDentroDaNota).type(texto);
   }
 
@@ -52,13 +52,13 @@ export default class NotasFiscaisEntradaPage {
     cy.get(gradeNotaFiscalEntrada).should('be.visible').contains("td:visible", texto).dblclick();
   }
 
-  pesquisarNumeroNota(numeroNota) {
+  pesquisarNumeroNota(numeroNota: string) {
     cy.get("select").first().select("Número da Nota");
     cy.get("input[placeholder='Número da Nota']").clearThenType(`${numeroNota}{enter}`);
     cy.wait(1000); //AGUARDAR PESQUISA
   }
 
-  verificarTipoNota(linha, tipoNota) {
+  verificarTipoNota(linha: number, tipoNota: string) {
     cy.get("app-tabela-padrao-paginada tbody tr")
         .eq(linha)
         .find("td")

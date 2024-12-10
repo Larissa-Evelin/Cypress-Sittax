@@ -1,0 +1,65 @@
+{
+    "fornecedores": [
+        {
+            "cnpjFornecedor": "07.489.678/0027-68",
+            "nomeFornecedor": "Sul Mineira Alimentos Ltda",
+            "notaFiscal": {
+                "tipo": "Mercadoria para Revenda",
+                "numero": "18539",
+                "arquivo": {
+                    "path": "arquivos/notas/41240507489678002768550010000185391531688750.xml"
+                }
+            }
+        },
+        {
+            "cnpjFornecedor": "42.446.277/0140-61",
+            "nomeFornecedor": "SHPX LOGISTICA LTDA.",
+            "notaFiscal": {
+                "tipo": "CTE",
+                "numero": "1115484",
+                "arquivo": {
+                    "path": "arquivos/notas/CTE-41240542446277014061570000011154841199735694.xml"
+                }
+            }
+        }
+    ],
+    "empresaSelecionada": {
+        "cnpj": "52.087.022/0001-34",
+        "razaoSocial": "IMPERIO NORTE PORANGATU LTDA"
+    },
+    "preRevenda": {
+        "cnpj": "39.648.579/0001-39",
+        "razaoSocial": "COMMODARE SOLUCOES FINANCEIRAS LTDA",
+        "nomeFantasia": "COMMODARE SOLUCOES FINANCEIRAS",
+        "email": "filipe.varela@live.com",
+        "telefone": "(84) 9406-8818",
+        "uf": "RN",
+        "apelido": "Naruto Uzumaki",
+        "itemUFS": [
+            "RO",
+            "AM"
+        ],
+        "keyApiSerpro": "dhasd743h3r32!",
+        "secretApiSerpro": "hgdj223jf"
+    },
+    "preEscritorio": {
+        "cnpj": "23.903.851/0001-40",
+        "razaoSocial": "SELMA APARECIDA DE LIMA 36364876803",
+        "nomeFantasia": "CONTFACILE",
+        "uf": "MG",
+        "municipio": "SÃO JOSÉ DOS CAMPOS",
+        "telefone": "(12) 88829-013",
+        "email": "135458selima@gmail.com",
+        "revendaApelido": "Naruto Uzumaki"
+    },
+    "PreEmporesa":{
+    "cnpj": "52.087.022/0001-34",
+    "escritorio": "SELMA APARECIDA DE LIMA 36364876803",
+    "razaoSocial": "IMPERIO NORTE PORANGATU LTDA",
+    "nomeFantasia": "CRIA FOOD",
+    "uf": "GO",
+    "municipio": "PORANGATU",
+    "telefone": "(62) 84262-926",
+    "email": ""
+    }
+}
